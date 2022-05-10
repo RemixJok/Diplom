@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище DiplomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Деятельность на ЗУ">
+          <Key>
+            <PropertyRef Name="ID_Деятельности" />
+          </Key>
+          <Property Name="ID_Деятельности" Type="int" Nullable="false" />
+          <Property Name="Наименование деятельности" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Заявки">
+          <Key>
+            <PropertyRef Name="ID_Заявки" />
+          </Key>
+          <Property Name="ID_Заявки" Type="int" Nullable="false" />
+          <Property Name="ID_Участка" Type="int" Nullable="false" />
+          <Property Name="ID_Пользователя" Type="int" Nullable="false" />
+          <Property Name="ID_Деятельности" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Пользователи">
+          <Key>
+            <PropertyRef Name="ID_Пользователя" />
+          </Key>
+          <Property Name="ID_Пользователя" Type="int" Nullable="false" />
+          <Property Name="Логин" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ФИО" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Пол" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="Дата рождения" Type="date" Nullable="false" />
+          <Property Name="Гражданство" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Паспорт" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="СНИЛС" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="ИНН" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="Мобильный телефон" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Адрес электронной почты" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Почтовый адрес" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Адрес регистрации" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Участки">
+          <Key>
+            <PropertyRef Name="ID_Участка" />
+          </Key>
+          <Property Name="ID_Участка" Type="int" Nullable="false" />
+          <Property Name="Регион" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Адрес" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Дата постановки на учет" Type="date" Nullable="false" />
+          <Property Name="Площадь ЗУ" Type="int" Nullable="false" />
+          <Property Name="Статус" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Заявки_Деятельность на ЗУ">
+          <End Role="Деятельность на ЗУ" Type="Self.Деятельность на ЗУ" Multiplicity="1" />
+          <End Role="Заявки" Type="Self.Заявки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Деятельность на ЗУ">
+              <PropertyRef Name="ID_Деятельности" />
+            </Principal>
+            <Dependent Role="Заявки">
+              <PropertyRef Name="ID_Деятельности" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заявки_Пользователи">
+          <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="1" />
+          <End Role="Заявки" Type="Self.Заявки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="ID_Пользователя" />
+            </Principal>
+            <Dependent Role="Заявки">
+              <PropertyRef Name="ID_Пользователя" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заявки_Участки">
+          <End Role="Участки" Type="Self.Участки" Multiplicity="1" />
+          <End Role="Заявки" Type="Self.Заявки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Участки">
+              <PropertyRef Name="ID_Участка" />
+            </Principal>
+            <Dependent Role="Заявки">
+              <PropertyRef Name="ID_Участка" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище DiplomModelContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Деятельность на ЗУ" EntityType="Self.Деятельность на ЗУ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Заявки" EntityType="Self.Заявки" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Пользователи" EntityType="Self.Пользователи" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Участки" EntityType="Self.Участки" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Заявки_Деятельность на ЗУ" Association="Self.FK_Заявки_Деятельность на ЗУ">
+            <End Role="Деятельность на ЗУ" EntitySet="Деятельность на ЗУ" />
+            <End Role="Заявки" EntitySet="Заявки" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заявки_Пользователи" Association="Self.FK_Заявки_Пользователи">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="Заявки" EntitySet="Заявки" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заявки_Участки" Association="Self.FK_Заявки_Участки">
+            <End Role="Участки" EntitySet="Участки" />
+            <End Role="Заявки" EntitySet="Заявки" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DiplomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DiplomEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="DiplomModel.sysdiagrams" />
+          <EntitySet Name="Деятельность_на_ЗУ" EntityType="DiplomModel.Деятельность_на_ЗУ" />
+          <EntitySet Name="Заявки" EntityType="DiplomModel.Заявки" />
+          <EntitySet Name="Пользователи" EntityType="DiplomModel.Пользователи" />
+          <EntitySet Name="Участки" EntityType="DiplomModel.Участки" />
+          <AssociationSet Name="FK_Заявки_Деятельность_на_ЗУ" Association="DiplomModel.FK_Заявки_Деятельность_на_ЗУ">
+            <End Role="Деятельность_на_ЗУ" EntitySet="Деятельность_на_ЗУ" />
+            <End Role="Заявки" EntitySet="Заявки" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заявки_Пользователи" Association="DiplomModel.FK_Заявки_Пользователи">
+            <End Role="Пользователи" EntitySet="Пользователи" />
+            <End Role="Заявки" EntitySet="Заявки" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Заявки_Участки" Association="DiplomModel.FK_Заявки_Участки">
+            <End Role="Участки" EntitySet="Участки" />
+            <End Role="Заявки" EntitySet="Заявки" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Деятельность_на_ЗУ">
+          <Key>
+            <PropertyRef Name="ID_Деятельности" />
+          </Key>
+          <Property Name="ID_Деятельности" Type="Int32" Nullable="false" />
+          <Property Name="Наименование_деятельности" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Заявки" Relationship="DiplomModel.FK_Заявки_Деятельность_на_ЗУ" FromRole="Деятельность_на_ЗУ" ToRole="Заявки" />
+        </EntityType>
+        <EntityType Name="Заявки">
+          <Key>
+            <PropertyRef Name="ID_Заявки" />
+          </Key>
+          <Property Name="ID_Заявки" Type="Int32" Nullable="false" />
+          <Property Name="ID_Участка" Type="Int32" Nullable="false" />
+          <Property Name="ID_Пользователя" Type="Int32" Nullable="false" />
+          <Property Name="ID_Деятельности" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Деятельность_на_ЗУ" Relationship="DiplomModel.FK_Заявки_Деятельность_на_ЗУ" FromRole="Заявки" ToRole="Деятельность_на_ЗУ" />
+          <NavigationProperty Name="Пользователи" Relationship="DiplomModel.FK_Заявки_Пользователи" FromRole="Заявки" ToRole="Пользователи" />
+          <NavigationProperty Name="Участки" Relationship="DiplomModel.FK_Заявки_Участки" FromRole="Заявки" ToRole="Участки" />
+        </EntityType>
+        <EntityType Name="Пользователи">
+          <Key>
+            <PropertyRef Name="ID_Пользователя" />
+          </Key>
+          <Property Name="ID_Пользователя" Type="Int32" Nullable="false" />
+          <Property Name="Логин" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Пароль" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ФИО" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Пол" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Дата_рождения" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Гражданство" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Паспорт" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="СНИЛС" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="ИНН" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="Мобильный_телефон" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Адрес_электронной_почты" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Почтовый_адрес" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Адрес_регистрации" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Заявки" Relationship="DiplomModel.FK_Заявки_Пользователи" FromRole="Пользователи" ToRole="Заявки" />
+        </EntityType>
+        <EntityType Name="Участки">
+          <Key>
+            <PropertyRef Name="ID_Участка" />
+          </Key>
+          <Property Name="ID_Участка" Type="Int32" Nullable="false" />
+          <Property Name="Регион" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Адрес" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Дата_постановки_на_учет" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Площадь_ЗУ" Type="Int32" Nullable="false" />
+          <Property Name="Статус" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Заявки" Relationship="DiplomModel.FK_Заявки_Участки" FromRole="Участки" ToRole="Заявки" />
+        </EntityType>
+        <Association Name="FK_Заявки_Деятельность_на_ЗУ">
+          <End Type="DiplomModel.Деятельность_на_ЗУ" Role="Деятельность_на_ЗУ" Multiplicity="1" />
+          <End Type="DiplomModel.Заявки" Role="Заявки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Деятельность_на_ЗУ">
+              <PropertyRef Name="ID_Деятельности" />
+            </Principal>
+            <Dependent Role="Заявки">
+              <PropertyRef Name="ID_Деятельности" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заявки_Пользователи">
+          <End Type="DiplomModel.Пользователи" Role="Пользователи" Multiplicity="1" />
+          <End Type="DiplomModel.Заявки" Role="Заявки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Пользователи">
+              <PropertyRef Name="ID_Пользователя" />
+            </Principal>
+            <Dependent Role="Заявки">
+              <PropertyRef Name="ID_Пользователя" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Заявки_Участки">
+          <End Type="DiplomModel.Участки" Role="Участки" Multiplicity="1" />
+          <End Type="DiplomModel.Заявки" Role="Заявки" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Участки">
+              <PropertyRef Name="ID_Участка" />
+            </Principal>
+            <Dependent Role="Заявки">
+              <PropertyRef Name="ID_Участка" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DiplomModelContainer" CdmEntityContainer="DiplomEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DiplomModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Деятельность_на_ЗУ">
+            <EntityTypeMapping TypeName="DiplomModel.Деятельность_на_ЗУ">
+              <MappingFragment StoreEntitySet="Деятельность на ЗУ">
+                <ScalarProperty Name="Наименование_деятельности" ColumnName="Наименование деятельности" />
+                <ScalarProperty Name="ID_Деятельности" ColumnName="ID_Деятельности" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Заявки">
+            <EntityTypeMapping TypeName="DiplomModel.Заявки">
+              <MappingFragment StoreEntitySet="Заявки">
+                <ScalarProperty Name="ID_Деятельности" ColumnName="ID_Деятельности" />
+                <ScalarProperty Name="ID_Пользователя" ColumnName="ID_Пользователя" />
+                <ScalarProperty Name="ID_Участка" ColumnName="ID_Участка" />
+                <ScalarProperty Name="ID_Заявки" ColumnName="ID_Заявки" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Пользователи">
+            <EntityTypeMapping TypeName="DiplomModel.Пользователи">
+              <MappingFragment StoreEntitySet="Пользователи">
+                <ScalarProperty Name="Адрес_регистрации" ColumnName="Адрес регистрации" />
+                <ScalarProperty Name="Почтовый_адрес" ColumnName="Почтовый адрес" />
+                <ScalarProperty Name="Адрес_электронной_почты" ColumnName="Адрес электронной почты" />
+                <ScalarProperty Name="Мобильный_телефон" ColumnName="Мобильный телефон" />
+                <ScalarProperty Name="ИНН" ColumnName="ИНН" />
+                <ScalarProperty Name="СНИЛС" ColumnName="СНИЛС" />
+                <ScalarProperty Name="Паспорт" ColumnName="Паспорт" />
+                <ScalarProperty Name="Гражданство" ColumnName="Гражданство" />
+                <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="Пароль" ColumnName="Пароль" />
+                <ScalarProperty Name="Логин" ColumnName="Логин" />
+                <ScalarProperty Name="ID_Пользователя" ColumnName="ID_Пользователя" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Участки">
+            <EntityTypeMapping TypeName="DiplomModel.Участки">
+              <MappingFragment StoreEntitySet="Участки">
+                <ScalarProperty Name="Статус" ColumnName="Статус" />
+                <ScalarProperty Name="Площадь_ЗУ" ColumnName="Площадь ЗУ" />
+                <ScalarProperty Name="Дата_постановки_на_учет" ColumnName="Дата постановки на учет" />
+                <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+                <ScalarProperty Name="Регион" ColumnName="Регион" />
+                <ScalarProperty Name="ID_Участка" ColumnName="ID_Участка" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

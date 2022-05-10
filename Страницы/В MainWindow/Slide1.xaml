@@ -1,0 +1,24 @@
+﻿<Page x:Class="Diplom.Страницы.В_MainWindow.Slide1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Страницы.В_MainWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1920"
+      Title="Slide1">
+
+    <Grid>
+        <Image Source="/Resources/MainWindow/Slide1/Slide1.png"/>
+
+        <TextBlock Text="КАК ВЫБРАТЬ И ПОЛУЧИТЬ ЗЕМЛЮ БЕСПЛАТНО" VerticalAlignment="Center" 
+                   HorizontalAlignment="Left" FontFamily="Hectarum" Foreground="White" 
+                   FontSize="72" FontWeight="Bold" TextWrapping="Wrap" Width="700" 
+                   Margin="330,0,0,0"/>
+
+        <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="100" 
+                Margin="0,0,100,0" Name="ArrowRight" Click="ArrowRight_Click" Cursor="Hand">
+            <Image Source="/Resources/MainWindow/ArrowRight.png"/>
+        </Button>
+    </Grid>
+</Page>

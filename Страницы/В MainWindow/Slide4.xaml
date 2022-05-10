@@ -1,0 +1,44 @@
+﻿<Page x:Class="Diplom.Страницы.В_MainWindow.Slide4"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Страницы.В_MainWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1920"
+      Title="Slide4">
+
+    <Grid>
+        <Border Background="Orange" Width="700" Height="40" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" Margin="300,70,0,0">
+            <TextBlock Text="КАК ОФОРМИТЬ ЗАЯВЛЕНИЕ И ПОЛУЧИТЬ ЗЕМЛЮ?" VerticalAlignment="Center" 
+                       TextAlignment="Center" FontSize="25" Foreground="#0d5a49" FontWeight="Bold"
+                       FontFamily="Hectarum"/>
+        </Border>
+
+        <TextBlock Text="Выбор формы подачи заявления" Foreground="White" FontSize="44" 
+                   FontFamily="Hectarum" VerticalAlignment="Center" FontWeight="Bold" 
+                   Margin="300,0,0,300"/>
+        <TextBlock Text="Для индивидуального пользователя можно выбрать участок площадью не более 1 гектара" 
+                   Foreground="White" FontSize="16" FontFamily="Verdana" VerticalAlignment="Top"
+                   TextWrapping="Wrap" Margin="300,255,1175,0"/>
+        <TextBlock Text="В коллективное пользование можно оформить участок площадью до 10 гектаров, причем количество участников группы должно быть не более 10 человек, а на каждого участника приходится не более 1 гектара"
+                   Foreground="White" FontSize="16" FontFamily="Verdana" VerticalAlignment="Top" 
+                   TextWrapping="Wrap" Margin="900,255,400,0"/>
+
+        <Image Source="/Resources/MainWindow/Slide4/Slide4(2).png" HorizontalAlignment="Left" 
+               VerticalAlignment="Bottom" Margin="300,0,1250,0"/>
+        <Image Source="/Resources/MainWindow/Slide4/Slide4.png" HorizontalAlignment="Right" 
+               VerticalAlignment="Bottom" Margin="900,0,410,0"/>
+
+        <Button HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="100" 
+                Margin="100,0,0,0" Name="ArrowLeft" Click="ArrowLeft_Click" Cursor="Hand">
+            <Image Source="/Resources/MainWindow/ArrowLeft.png"/>
+        </Button>
+
+        <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="100" 
+                Margin="0,0,100,0" Name="ArrowRight" Click="ArrowRight_Click" Cursor="Hand">
+            <Image Source="/Resources/MainWindow/ArrowRight.png"/>
+        </Button>
+    </Grid>
+</Page>

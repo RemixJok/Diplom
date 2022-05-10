@@ -1,0 +1,115 @@
+﻿<Page x:Class="Diplom.Страницы.В_MainWindow.Slide8"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Страницы.В_MainWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1920"
+      Title="Slide8">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="Orange" Width="450" Height="40" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" Margin="300,70,0,0">
+            <TextBlock Text="КАК ИСПОЛЬЗОВАТЬ УЧАСТОК?" VerticalAlignment="Center" 
+                       TextAlignment="Center" FontSize="25" Foreground="#0d5a49" FontWeight="Bold" 
+                       FontFamily="Hectarum"/>
+        </Border>
+
+        <Border Background="Orange" Grid.Column="1" Width="320" Height="40" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="100,70,0,0">
+            <TextBlock Text="ВЫБРАТЬ ПОДДЕРЖКУ" VerticalAlignment="Center" TextAlignment="Center" 
+                       FontSize="25" Foreground="#0d5a49" FontWeight="Bold" FontFamily="Hectarum"/>
+        </Border>
+
+        <TextBlock Text="Разрешено использовать участок для любой деятельности, не противоречащей российскому законодательству." 
+                   Foreground="White" FontSize="14" FontFamily="Verdana" TextWrapping="Wrap" 
+                   VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Margin="0,150,0,0" Width="360"/>
+        <TextBlock Text="На участке можно:" Foreground="White" FontSize="26" FontFamily="Hectarum" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center"
+                   FontWeight="Bold" Margin="0,220,120,0"/>
+
+        <TextBlock Text="Для освоения полученного участка можно воспользоваться мерами государственной поддержки." 
+                   Grid.Column="1" Foreground="White" FontSize="14" FontFamily="Verdana" 
+                   TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center"
+                   Margin="89,150,450,0"/>
+        <TextBlock Text="Наиболее популярно:" Grid.Column="1" Foreground="White" FontSize="26" 
+                   FontFamily="Hectarum" TextWrapping="Wrap" VerticalAlignment="Top" 
+                   HorizontalAlignment="Center" FontWeight="Bold" Margin="0,220,480,0"/>
+
+        <StackPanel Orientation="Vertical" Margin="300,320,580,50" >
+            <Image Source="/Resources/MainWindow/Slide8/House.png" Margin="0,0,0,48"/>
+            <Image Source="/Resources/MainWindow/Slide8/Trac.png" Margin="0,0,0,48"/>
+            <Image Source="/Resources/MainWindow/Slide8/Garden.png"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="400,320,410,50">
+            <TextBlock Text="Построить дом" Foreground="White" FontSize="14" FontFamily="Verdana" 
+                       Margin="0,30,0,100"/>
+            <TextBlock Text="Заняться сельским хозяйством" Foreground="White" FontSize="14" 
+                       TextWrapping="Wrap" FontFamily="Verdana" Margin="0,0,0,70"/>
+            <TextBlock Text="Обустроисть дачный участок" Foreground="White" FontSize="14" 
+                       TextWrapping="Wrap" FontFamily="Verdana"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Margin="600,320,280,50" >
+            <Image Source="/Resources/MainWindow/Slide8/Cam.png" Margin="0,0,0,48"/>
+            <Image Source="/Resources/MainWindow/Slide8/Coffee.png" Margin="0,0,0,48"/>
+            <Image Source="/Resources/MainWindow/Slide8/Flags.png"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="700,320,0,50">
+            <TextBlock Text="Открыть туристический объект" Foreground="White" FontSize="14" 
+                       TextWrapping="Wrap" FontFamily="Verdana" Margin="0,20,90,90"/>
+            <TextBlock Text="Заняться предпринимательством" Foreground="White" FontSize="14" 
+                       TextWrapping="Wrap" FontFamily="Verdana" Margin="0,0,70,70"/>
+            <TextBlock Text="Заняться другими разрешенными видами деятельности" Foreground="White" 
+                       FontSize="14" TextWrapping="Wrap" FontFamily="Verdana" Margin="0,0,20,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="100,280,790,20" >
+            <Image Source="/Resources/MainWindow/Slide8/Barn.png" Margin="0,0,0,10"/>
+            <Image Source="/Resources/MainWindow/Slide8/Plant.png" Margin="0,0,0,10"/>
+            <Image Source="/Resources/MainWindow/Slide8/Wallet-2.png" Margin="0,0,0,10"/>
+            <Image Source="/Resources/MainWindow/Slide8/Cow.png" Margin="0,0,0,10"/>
+            <Image Source="/Resources/MainWindow/Slide8/Suitcase.png"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Margin="200,280,375,20">
+            <TextBlock Text="Грант на поддержку создания хозяйств населения" Foreground="White" 
+                       FontSize="14" TextWrapping="Wrap" FontFamily="Verdana" Margin="0,20,0,55"/>
+            <TextBlock Text="Грант «Начинающий фермер»" Foreground="White" FontSize="14" 
+                       TextWrapping="Wrap" FontFamily="Verdana" Margin="0,0,0,55"/>
+            <TextBlock Text="Микрозаймы, льготное кредитование" Foreground="White" FontSize="14" 
+                       TextWrapping="Wrap" FontFamily="Verdana" Margin="0,0,0,50"/>
+            <TextBlock Text="Грант на развитие семейной животноводческой фермы" Foreground="White" 
+                       FontSize="14" TextWrapping="Wrap" FontFamily="Verdana" Margin="0,0,0,35"/>
+            <TextBlock Text="Грант начинающим предпринимателям на создание собственного бизнеса"
+                       Foreground="White" FontSize="14" TextWrapping="Wrap" FontFamily="Verdana"/>
+        </StackPanel>
+
+        <Rectangle Grid.Column="1" Panel.ZIndex="-1">
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="#0d5a49" Offset="0.0"/>
+                    <GradientStop Color="#298242" Offset="0.5"/>
+                    <GradientStop Color="#52b147" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="100" 
+                Margin="100,0,0,0" Name="ArrowLeft" Click="ArrowLeft_Click" Cursor="Hand">
+            <Image Source="/Resources/MainWindow/ArrowLeft.png"/>
+        </Button>
+
+        <Button Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" 
+                Height="100" Margin="0,0,100,0" Name="ArrowRight" Click="ArrowRight_Click" 
+                Cursor="Hand">
+            <Image Source="/Resources/MainWindow/ArrowRight.png"/>
+        </Button>
+    </Grid>
+</Page>

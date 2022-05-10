@@ -1,0 +1,40 @@
+﻿<Page x:Class="Diplom.Страницы.В_MainWindow.Slide7"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Страницы.В_MainWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1920"
+      Title="Slide7">
+
+    <Grid>
+        <Border Background="Orange" Width="700" Height="40" HorizontalAlignment="Left" 
+                VerticalAlignment="Top" Margin="300,70,0,0">
+            <TextBlock Text="КАК ОФОРМИТЬ ЗАЯВЛЕНИЕ И ПОЛУЧИТЬ ЗЕМЛЮ?" VerticalAlignment="Center" 
+                       TextAlignment="Center" FontSize="25" Foreground="#0d5a49" FontWeight="Bold" 
+                       FontFamily="Hectarum"/>
+        </Border>
+
+        <TextBlock Text="Подписание договора безвозмездного пользования" Foreground="White" 
+                   FontSize="44" FontFamily="Hectarum" FontWeight="Bold" TextWrapping="Wrap" 
+                   Margin="300,170,1100,370"/>
+        <TextBlock Text="После постановки земельного участка на кадастровый учет, сотрудник уполномоченного органа формирует и отправляет гражданину проект договора о предоставлении земельного участка в пользование. Гражданин должен в течение 30 дней его подписать и предоставить в уполномоченный орган. Далее договор отправляется на государственную регистрацию в Росреестр."
+                   Foreground="White" FontSize="16" FontFamily="Verdana" TextWrapping="Wrap" 
+                   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="300,150,0,0"
+                   Width="520"/>
+
+        <Image Source="/Resources/MainWindow/Slide7/Slide7.png" VerticalAlignment="Bottom" 
+               HorizontalAlignment="Right" Height="530" Margin="0,0,300,0"/>
+
+        <Button HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" Height="100" 
+                Margin="100,0,0,0" Name="ArrowLeft" Click="ArrowLeft_Click" Cursor="Hand">
+            <Image Source="/Resources/MainWindow/ArrowLeft.png"/>
+        </Button>
+
+        <Button HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="100" 
+                Margin="0,0,100,0" Name="ArrowRight" Click="ArrowRight_Click" Cursor="Hand">
+            <Image Source="/Resources/MainWindow/ArrowRight.png"/>
+        </Button>
+    </Grid>
+</Page>
