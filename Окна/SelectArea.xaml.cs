@@ -10,10 +10,11 @@ namespace Diplom.Окна
     /// </summary>
     public partial class SelectArea : Window
     {
-        public SelectArea()
+        public SelectArea(string userName)
         {
             InitializeComponent();
             DGridArea.ItemsSource = DB.diplomEntities.Участки.ToList();
+            UserName.Text = userName;
         }
 
         //Кнопка выбора участка

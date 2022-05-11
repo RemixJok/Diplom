@@ -69,7 +69,7 @@
                     <DropShadowEffect BlurRadius="5" ShadowDepth="0"/>
                 </Grid.Effect>
                 <StackPanel Orientation="Vertical">
-                    <Button Name="MyProfile" Width="275" Margin="0,15,0,15" Click="MyProfile_Click">
+                    <Button Name="MyProfile" Width="275" Margin="0,15" Click="MyProfile_Click">
                         <StackPanel Orientation="Horizontal" Width="275">
                             <Image Source="/Resources/UserPageStart/BlackUser.png"/>
                             <TextBlock Text="Мой профиль" Margin="20,0,0,0" VerticalAlignment="Center"/>

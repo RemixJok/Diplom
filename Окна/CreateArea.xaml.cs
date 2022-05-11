@@ -33,7 +33,7 @@ namespace Diplom.Окна
         //Простые кнопки
         private void GoToSelectArea(object sender, RoutedEventArgs e)
         {
-            SelectArea selectArea = new SelectArea();
+            SelectArea selectArea = new SelectArea(UserName.Text);
             selectArea.Show();
             Close();
         }

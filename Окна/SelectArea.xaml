@@ -71,7 +71,7 @@
                     <DropShadowEffect BlurRadius="5" ShadowDepth="0"/>
                 </Grid.Effect>
                 <StackPanel Orientation="Vertical">
-                    <Button Name="MyProfile" Width="275" Margin="0,15,0,15" Click="MyProfile_Click">
+                    <Button Name="MyProfile" Width="275" Margin="0,15" Click="MyProfile_Click">
                         <StackPanel Orientation="Horizontal" Width="275">
                             <Image Source="/Resources/UserPageStart/BlackUser.png"/>
                             <TextBlock Text="Мой профиль" Margin="20,0,0,0" VerticalAlignment="Center"/>
@@ -115,7 +115,8 @@
 
             <ScrollViewer Grid.Row="2">
                 <DataGrid x:Name="DGridArea" AutoGenerateColumns="False" IsReadOnly="True" FontSize="14" 
-                          CanUserResizeRows="False">
+                          CanUserResizeRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False"
+                          VerticalAlignment="Top" VerticalContentAlignment="Center">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Регион" Binding="{Binding Регион}" Width="250" FontSize="14"/>
                         <DataGridTextColumn Header="Адрес" Binding="{Binding Адрес}" Width="*" FontSize="14"/>
