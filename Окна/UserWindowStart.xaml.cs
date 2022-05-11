@@ -19,7 +19,7 @@ namespace Diplom.Окна
             UserName.Text = selectedUser.ФИО.Trim();
             FIO.Text = selectedUser.ФИО.Trim();
             Pol.Text = selectedUser.Пол;
-            Birthday.Text = Convert.ToString(selectedUser.Дата_рождения);
+            Birthday.Text = selectedUser.Дата_рождения.ToString("dd.MM.yyyy");
             Nationality.Text = selectedUser.Гражданство.Trim();
             Pasport.Text = selectedUser.Паспорт.Trim();
             SNILS.Text = selectedUser.СНИЛС.Trim();
