@@ -16,7 +16,7 @@
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
 
-            <Button HorizontalAlignment="Left" Height="100" Name="Main" Cursor="Hand">
+            <Button HorizontalAlignment="Left" Height="100" Name="Main">
                 <Image Source="/Resources/MainWindow/Grid0/Header.png" HorizontalAlignment="Left" 
                        Height="70" Margin="20,0,0,0"/>
             </Button>

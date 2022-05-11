@@ -12,12 +12,13 @@ namespace Diplom.Окна
     /// </summary>
     public partial class CreateArea : Window
     {
-        public CreateArea()
+        public CreateArea(string userName)
         {
             InitializeComponent();
 
             //Вывод деятельности на ЗУ в комбобокс
             ComboPlanActiv.ItemsSource = DB.diplomEntities.Деятельность_на_ЗУ.ToList();
+            UserName.Text = userName;
         }
 
         //Открытие или Закрытие бордера по кнопке

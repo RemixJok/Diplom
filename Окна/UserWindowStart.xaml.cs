@@ -80,7 +80,7 @@ namespace Diplom.Окна
         //Простые кнопки
         private void MyArea_Click(object sender, RoutedEventArgs e)
         {
-            CreateArea createArea = new CreateArea();
+            CreateArea createArea = new CreateArea(UserName.Text);
             createArea.Show();
             Close();
         }
