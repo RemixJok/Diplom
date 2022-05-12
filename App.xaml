@@ -5,6 +5,15 @@
              StartupUri="Окна/MainWindow.xaml">
 
     <Application.Resources>
+        <!-- Размещение текста по центру -->
+        <Style TargetType="DataGridCell">
+            <Style.Resources>
+                <Style TargetType="ContentPresenter">
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
         <!-- Кнопка для вк и ютуб -->
         <Style x:Key="VKYouTube" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
