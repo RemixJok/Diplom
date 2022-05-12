@@ -115,19 +115,19 @@
 
             <ScrollViewer Grid.Row="2">
                 <DataGrid x:Name="DGridArea" AutoGenerateColumns="False" IsReadOnly="True" FontSize="14" 
-                          CanUserResizeRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False"
-                          VerticalAlignment="Top" VerticalContentAlignment="Center">
+                          CanUserResizeRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Регион" Binding="{Binding Регион}" Width="250" FontSize="14"/>
+                        <DataGridTextColumn Header="Регион" Binding="{Binding Регион}" Width="300" FontSize="14"/>
                         <DataGridTextColumn Header="Адрес" Binding="{Binding Адрес}" Width="*" FontSize="14"/>
-                        <DataGridTextColumn Header="Площадь кв.м." Binding="{Binding Площадь}" Width="*" FontSize="14"/>
-                        <DataGridTextColumn Header="Дата постановки на учет" Binding="{Binding Дата_постановки_на_учет}" 
-                                            Width="*" FontSize="14"/>
+                        <DataGridTextColumn Header="Площадь кв.м." Binding="{Binding Площадь}" Width="200" FontSize="14"/>
+                        <DataGridTextColumn Header="Дата постановки на учет" 
+                                            Binding="{Binding Дата_постановки_на_учет, StringFormat=\{0:dd.MM.yyyy\}}"
+                                            Width="200" FontSize="14"/>
                         <DataGridTemplateColumn Width="auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button Content="Выбрать участок" Name="SelectArea" Click="SelectArea_Click"
-                                            FontSize="14" Style="{StaticResource BtnQuit}" Width="150" 
+                                            FontSize="14" Style="{StaticResource BtnQuit}" Width="200" 
                                             Foreground="White"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

@@ -137,6 +137,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataUser.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="Model1.Context.cs">

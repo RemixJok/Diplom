@@ -58,7 +58,7 @@
           <Property Name="Регион" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Адрес" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Дата постановки на учет" Type="date" Nullable="false" />
-          <Property Name="Площадь ЗУ" Type="int" Nullable="false" />
+          <Property Name="Площадь ЗУ" Type="float" Nullable="false" />
           <Property Name="Статус" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Заявки_Деятельность на ЗУ">
@@ -197,7 +197,7 @@
           <Property Name="Регион" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Адрес" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Дата_постановки_на_учет" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Площадь_ЗУ" Type="Int32" Nullable="false" />
+          <Property Name="Площадь_ЗУ" Type="Double" Nullable="false" />
           <Property Name="Статус" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Заявки" Relationship="DiplomModel.FK_Заявки_Участки" FromRole="Участки" ToRole="Заявки" />
         </EntityType>

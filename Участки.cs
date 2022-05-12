@@ -24,7 +24,7 @@ namespace Diplom
         public string Регион { get; set; }
         public string Адрес { get; set; }
         public System.DateTime Дата_постановки_на_учет { get; set; }
-        public int Площадь_ЗУ { get; set; }
+        public double Площадь_ЗУ { get; set; }
         public string Статус { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
