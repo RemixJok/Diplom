@@ -48,7 +48,7 @@ namespace Diplom.Окна
         //Кнопка регистрации
         private void BtnGoToReg_Click(object sender, RoutedEventArgs e)
         {
-            Registration registration = new Registration();
+            Registration registration = new Registration(DataUser.User);
             registration.Show();
             Close();
         }

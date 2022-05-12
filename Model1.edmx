@@ -26,7 +26,7 @@
           <Key>
             <PropertyRef Name="ID_Заявки" />
           </Key>
-          <Property Name="ID_Заявки" Type="int" Nullable="false" />
+          <Property Name="ID_Заявки" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_Участка" Type="int" Nullable="false" />
           <Property Name="ID_Пользователя" Type="int" Nullable="false" />
           <Property Name="ID_Деятельности" Type="int" Nullable="false" />
@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="ID_Пользователя" />
           </Key>
-          <Property Name="ID_Пользователя" Type="int" Nullable="false" />
+          <Property Name="ID_Пользователя" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Логин" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ФИО" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -54,7 +54,7 @@
           <Key>
             <PropertyRef Name="ID_Участка" />
           </Key>
-          <Property Name="ID_Участка" Type="int" Nullable="false" />
+          <Property Name="ID_Участка" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Регион" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Адрес" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="Дата постановки на учет" Type="date" Nullable="false" />
@@ -161,7 +161,7 @@
           <Key>
             <PropertyRef Name="ID_Заявки" />
           </Key>
-          <Property Name="ID_Заявки" Type="Int32" Nullable="false" />
+          <Property Name="ID_Заявки" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ID_Участка" Type="Int32" Nullable="false" />
           <Property Name="ID_Пользователя" Type="Int32" Nullable="false" />
           <Property Name="ID_Деятельности" Type="Int32" Nullable="false" />
@@ -173,7 +173,7 @@
           <Key>
             <PropertyRef Name="ID_Пользователя" />
           </Key>
-          <Property Name="ID_Пользователя" Type="Int32" Nullable="false" />
+          <Property Name="ID_Пользователя" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Логин" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Пароль" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ФИО" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -193,7 +193,7 @@
           <Key>
             <PropertyRef Name="ID_Участка" />
           </Key>
-          <Property Name="ID_Участка" Type="Int32" Nullable="false" />
+          <Property Name="ID_Участка" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Регион" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Адрес" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Дата_постановки_на_учет" Type="DateTime" Nullable="false" Precision="0" />

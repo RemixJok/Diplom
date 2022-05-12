@@ -15,10 +15,11 @@ namespace Diplom.Окна
         private Пользователи _currentСНИЛС = null;
         private Пользователи _currentИНН = null;
 
-        public Registration()
+        public Registration(Пользователи selectedUser)
         {
             InitializeComponent();
             DB.diplomEntities = new DiplomEntities();
+            
         }
 
 
@@ -40,11 +41,12 @@ namespace Diplom.Окна
                     Пароль = Password.Password.Trim(),
                     ФИО = FIO.Text.Trim(),
                     Пол = Pol.Text.ToLower(),
-                    Дата_рождения = Convert.ToDateTime(Birthday.Text).ToLocalTime(),
+                    Дата_рождения = Convert.ToDateTime(Birthday.Text),
                     Гражданство = Nationality.Text.Trim().ToLower(),
                     Паспорт = Pasport.Text.Trim().ToLower(),
                     СНИЛС = SNILS.Text.Trim(),
                     ИНН = INN.Text.Trim(),
+                    Мобильный_телефон = Phone.Text.Trim(),
                     Адрес_электронной_почты = Email.Text.Trim(),
                     Почтовый_адрес = MailAddress.Text.Trim(),
                     Адрес_регистрации = RegAddress.Text.Trim()
@@ -79,7 +81,7 @@ namespace Diplom.Окна
 
             var loginFromDB = DB.diplomEntities.Пользователи.ToList().FirstOrDefault(p => p.Логин.ToLower() == Login.Text.ToLower());
             if (loginFromDB != null && loginFromDB != _currentЛогин)
-                errorBuilder.AppendLine("Такой логин уже зарегистрирован!");
+                errorBuilder.AppendLine("Пользователь с таким логином уже зарегистрирован!");
 
             if (Password.Password.Length < 8)
                 errorBuilder.AppendLine("Поле 'Пароль' не может содержать меньше 8 символов!");
@@ -101,14 +103,14 @@ namespace Diplom.Окна
 
             var SNILSFromDB = DB.diplomEntities.Пользователи.ToList().FirstOrDefault(p => p.СНИЛС == SNILS.Text);
             if (SNILSFromDB != null && SNILSFromDB != _currentСНИЛС)
-                errorBuilder.AppendLine("Такой СНИЛС уже зарегистрирован!");
+                errorBuilder.AppendLine("Пользователь с таким СНИЛС уже зарегистрирован!");
 
             if (INN.Text.Length < 12)
                 errorBuilder.AppendLine("Поле 'ИНН' не может быть меньше 12 цифр!");
 
             var INNFromDB = DB.diplomEntities.Пользователи.ToList().FirstOrDefault(p => p.ИНН == INN.Text);
             if (INNFromDB != null && INNFromDB != _currentИНН)
-                errorBuilder.AppendLine("Такой ИНН уже зарегистрирован!");
+                errorBuilder.AppendLine("Пользователь с таким ИНН уже зарегистрирован!");
 
             if (Phone.Text.Length < 11)
                 errorBuilder.AppendLine("Поле 'Мобильный телефон' не может быть меньше 11 цифр!");

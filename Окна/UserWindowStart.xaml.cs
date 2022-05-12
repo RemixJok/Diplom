@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -93,6 +94,16 @@ namespace Diplom.Окна
         private void DeleteInfo_Click(object sender, RoutedEventArgs e)
         {
 
+            DiplomEntities deleteUser = new DiplomEntities();
+
+            Пользователи user = deleteUser.Пользователи.Where(p => p.ID_Пользователя == 1).FirstOrDefault();
+
+            deleteUser.Пользователи.Remove(user);
+            deleteUser.SaveChanges();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
 
         private void Quit_Click(object sender, RoutedEventArgs e)
