@@ -15,11 +15,10 @@ namespace Diplom.Окна
         private Пользователи _currentСНИЛС = null;
         private Пользователи _currentИНН = null;
 
-        public Registration(Пользователи selectedUser)
+        public Registration()
         {
             InitializeComponent();
             DB.diplomEntities = new DiplomEntities();
-            
         }
 
 
@@ -114,6 +113,10 @@ namespace Diplom.Окна
 
             if (Phone.Text.Length < 11)
                 errorBuilder.AppendLine("Поле 'Мобильный телефон' не может быть меньше 11 цифр!");
+
+            var PhoneFromDB = DB.diplomEntities.Пользователи.ToList().FirstOrDefault(p => p.Мобильный_телефон == Phone.Text);
+            if (PhoneFromDB != null && PhoneFromDB != _currentИНН)
+                errorBuilder.AppendLine("Пользователь с таким телефоном уже зарегистрирован!");
 
             if (Email.Text.Length < 14)
                 errorBuilder.AppendLine("Поле 'Адрес электронной почты' не может быть меньше 14 символов!");

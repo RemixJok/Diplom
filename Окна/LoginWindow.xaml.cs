@@ -18,21 +18,19 @@ namespace Diplom.Окна
         //Кнопка для входа
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-            //Подключение к БД
             try
             {
-                //Динамическая переменная "userInfo", хранит данные из полей для логина и пароля
-                //FirstOrDefault - возвращает первый элемент последовательности
-                var userInfo = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.Логин == txtLogin.Text && p.Пароль == txtPassword.Password);
+                //Статический класс "DataUser", зранит данные о пользователе
+                DataUser.User = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.Логин == txtLogin.Text && p.Пароль == txtPassword.Password);
 
-                if (userInfo == null)
+                if (DataUser.User == null)
                 {
                     MessageBox.Show("Такого пользователя нет!", "Ошибка при авторизации",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
-                    UserPageStart userPage = new UserPageStart(userInfo);
+                    UserPageStart userPage = new UserPageStart(DataUser.User);
                     userPage.Show();
                     Close();
                 }
