@@ -119,7 +119,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Регион" Binding="{Binding Регион}" Width="300" FontSize="14"/>
                         <DataGridTextColumn Header="Адрес" Binding="{Binding Адрес}" Width="*" FontSize="14"/>
-                        <DataGridTextColumn Header="Площадь кв.м." Binding="{Binding Площадь}" Width="200" FontSize="14"/>
+                        <DataGridTextColumn Header="Площадь кв.м." Binding="{Binding Площадь_ЗУ}" Width="200" FontSize="14"/>
                         <DataGridTextColumn Header="Дата постановки на учет" 
                                             Binding="{Binding Дата_постановки_на_учет, StringFormat=\{0:dd.MM.yyyy\}}"
                                             Width="200" FontSize="14"/>
