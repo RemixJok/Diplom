@@ -40,12 +40,8 @@ namespace Diplom.Окна
 
         private void MyProfile_Click(object sender, RoutedEventArgs e)
         {
-            /*UserPageStart userPage = new UserPageStart(null);
+            UserPageStart userPage = new UserPageStart(DataUser.User);
             userPage.Show();
-            Close();*/
-
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
             Close();
         }
 

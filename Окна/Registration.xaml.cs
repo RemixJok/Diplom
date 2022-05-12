@@ -34,7 +34,7 @@ namespace Diplom.Окна
             else
             {
                 //Добавление данных в БД
-                var userInfo = new Пользователи()
+                var newUser = new Пользователи()
                 {
                     Логин = Login.Text.Trim().ToLower(),
                     Пароль = Password.Password.Trim(),
@@ -49,7 +49,7 @@ namespace Diplom.Окна
                     Почтовый_адрес = MailAddress.Text.Trim(),
                     Адрес_регистрации = RegAddress.Text.Trim()
                 };
-                DB.diplomEntities.Пользователи.Add(userInfo);
+                DB.diplomEntities.Пользователи.Add(newUser);
                 DB.diplomEntities.SaveChanges();
 
                 MessageBox.Show("Пользователь успешно добавлен!",
@@ -113,11 +113,8 @@ namespace Diplom.Окна
             if (Phone.Text.Length < 11)
                 errorBuilder.AppendLine("Поле 'Мобильный телефон' не может быть меньше 11 цифр!");
 
-            if (Email.Text.Length < 14)
-                errorBuilder.AppendLine("Поле 'Адрес электронной почты' не может быть меньше 14 символов!");
-
-            if (Email.Text.Contains(value: "@") && Email.Text.Contains(value: "."))
-                errorBuilder.AppendLine("Поле 'Адрес электронной почты' не содержит '@' или '.'");
+            if (Email.Text.Length < 10)
+                errorBuilder.AppendLine("Поле 'Адрес электронной почты' не может быть меньше 10 символов!");
 
             if (MailAddress.Text.Length < 30)
                 errorBuilder.AppendLine("Поле 'Почтовый адрес' не может быть меньше 30 символов!");

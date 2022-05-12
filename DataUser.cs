@@ -11,9 +11,6 @@ namespace Diplom
 {
     internal class DataUser
     {
-        //public static void UserData(Пользователи userData)
-        //{
-        //   userData = DB.diplomEntities.Пользователи.ToList().Find(p => p.Логин == txtLogin.Text && p.Пароль == txtPassword.Password);
-        //}
+        public static Пользователи User = null;
     }
 }
