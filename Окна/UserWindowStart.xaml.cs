@@ -90,11 +90,13 @@ namespace Diplom.Окна
 
         private void DeleteInfo_Click(object sender, RoutedEventArgs e)
         {
-
+            //Кнопка удаления пользователя
             DiplomEntities deleteUser = new DiplomEntities();
 
-            var user = DB.diplomEntities.Пользователи.Single(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
+            //Нахождение пользователя с там же id, под которым выполнен вход
+            var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
 
+            //Удаление пользователя из БД 
             DB.diplomEntities.Entry(user).State = EntityState.Deleted;
             DB.diplomEntities.SaveChanges();
 
