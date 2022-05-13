@@ -20,7 +20,12 @@ namespace Diplom.Окна
         //Кнопка выбора участка
         private void SelectArea_Click(object sender, RoutedEventArgs e)
         {
+            Участки path = DGridArea.SelectedItem as Участки;
+            DataAreaFromGrid.areaData = DB.diplomEntities.Участки.Add(path);
 
+            WhenAreaSelected areaSelected = new WhenAreaSelected(UserName.Text);
+            areaSelected.Show();
+            Close();
         }
 
         //Открытие или Закрытие бордера по кнопке
@@ -73,11 +78,11 @@ namespace Diplom.Окна
         //Обновление списка участков
         private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if (Visibility == Visibility.Visible)
-            {
-                DB.diplomEntities.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-                DGridArea.ItemsSource = DB.diplomEntities.Участки.ToList();
-            }
+            //if (Visibility == Visibility.Visible)
+            //{
+            //   DB.diplomEntities.ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+            //    DGridArea.ItemsSource = DB.diplomEntities.Участки.ToList();
+            //}
         }
     }
 }

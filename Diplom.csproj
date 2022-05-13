@@ -137,6 +137,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataAreaFromGrid.cs" />
     <Compile Include="DataUser.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="Link.cs" />
@@ -183,6 +184,9 @@
     </Compile>
     <Compile Include="Окна\UserPageStart.xaml.cs">
       <DependentUpon>UserPageStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Окна\WhenAreaSelected.xaml.cs">
+      <DependentUpon>WhenAreaSelected.xaml</DependentUpon>
     </Compile>
     <Compile Include="Пользователи.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -252,6 +256,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Окна\UserPageStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Окна\WhenAreaSelected.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
