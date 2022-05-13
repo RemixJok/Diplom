@@ -11,18 +11,35 @@
     <Grid>
         <Grid Background="White">
             <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
-            <ScrollViewer>
-                <Grid Height="400">
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
-                            Margin="0,40,0,0">
+
+            <Border BorderThickness="0.5" BorderBrush="#333" Panel.ZIndex="-2" Background="White">
+                <TextBlock Text="ЧАСТЫЕ ВОПРОСЫ" FontSize="20" Foreground="#52B147" 
+                           FontWeight="Medium" HorizontalAlignment="Left" VerticalAlignment="Center"
+                           Margin="40,0,0,0"/>
+            </Border>
+
+            <ScrollViewer Grid.Row="1">
+                <Grid>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"
+                            Margin="40,20,0,0">
+                        <TextBlock Text="Как получить участок?" FontSize="25" Foreground="#52B147" 
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Данную информацию вы можете посмотреть на главной странице, для этого выйдите из своего аккаута также вы можете спросит у сотрудника он вам поможет оформить заявление на участок"
+                                   FontSize="18" Margin="0,5,0,0"/>
+                        
+                        <TextBlock Text="Что требуется для получения участка?" FontSize="25" Foreground="#52B147" 
+                                   FontWeight="Bold" Margin="0,20,0,0"/>
+                        <TextBlock Text="Чтобы получить участок вам необходимо иметь при себе: паспорт, инн, снилс, а также заявление на участок, которое вам нужно отдать сотруднику, если что-то не получается обращайтесь к сотрудникам они вам помогут"
+                                   FontSize="18" Margin="0,5,0,0"/>
                     </StackPanel>
                 </Grid>
             </ScrollViewer>
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="2">
                 <Border VerticalAlignment="Center" Height="100" BorderThickness="0.3" BorderBrush="#333">
                     <TextBlock Text="© 2022 Министерство Российской Федерации по развитию Дальнего Востока и Арктики"
                            VerticalAlignment="Center" FontSize="14" Foreground="#182C4F" Margin="50,0,0,0"/>

@@ -90,21 +90,28 @@ namespace Diplom.Окна
 
         private void DeleteInfo_Click(object sender, RoutedEventArgs e)
         {
-            //Кнопка удаления пользователя
-            DiplomEntities deleteUser = new DiplomEntities();
+            //Показ сообщения перед удалением
+            MessageBoxResult result = MessageBox.Show($"Вы точно хотите удалить аккаунт пользователя {UserName.Text}?",
+                "Уведомление!", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            //Нахождение пользователя с там же id, под которым выполнен вход
-            var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
+            if (result == MessageBoxResult.Yes)
+            {
+                //Кнопка удаления пользователя
+                DiplomEntities deleteUser = new DiplomEntities();
 
-            //Удаление пользователя из БД 
-            DB.diplomEntities.Entry(user).State = EntityState.Deleted;
-            DB.diplomEntities.SaveChanges();
+                //Нахождение пользователя с там же id, под которым выполнен вход
+                var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
 
-            MessageBox.Show($"Пользователь {UserName.Text} удален");
+                //Удаление пользователя из БД 
+                DB.diplomEntities.Entry(user).State = EntityState.Deleted;
+                DB.diplomEntities.SaveChanges();
 
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
+                MessageBox.Show($"Пользователь {UserName.Text} удален");
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
         }
 
         private void Quit_Click(object sender, RoutedEventArgs e)

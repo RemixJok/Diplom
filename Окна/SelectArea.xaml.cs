@@ -24,14 +24,6 @@ namespace Diplom.Окна
         }
 
         //Открытие или Закрытие бордера по кнопке
-        private void OpenList(object sender, RoutedEventArgs e)
-        {
-            if (ListGrid.Visibility == Visibility.Hidden)
-                ListGrid.Visibility = Visibility.Visible;
-            else
-                ListGrid.Visibility = Visibility.Hidden;
-        }
-
         private void OpenUserMenu(object sender, RoutedEventArgs e)
         {
             if (UserGrid.Visibility == Visibility.Hidden)

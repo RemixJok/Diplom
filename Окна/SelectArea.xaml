@@ -23,17 +23,6 @@
                        Height="70" Margin="20,0,0,0"/>
             </Button>
 
-            <Button Margin="390,20,1470,0" Cursor="Hand" Click="OpenList">
-                <StackPanel Orientation="Vertical" Width="40">
-                    <Polygon Stroke="#5D5D5D7D" HorizontalAlignment="Center" 
-                             Points="0,0,15,0" Margin="10,0,0,10" StrokeThickness="2"/>
-                    <Polygon Stroke="#5D5D5D7D" HorizontalAlignment="Center" 
-                             Points="0,0,15,0" Margin="10,0,0,10" StrokeThickness="2"/>
-                    <Polygon Stroke="#5D5D5D7D" HorizontalAlignment="Center" 
-                             Points="0,0,15,0" Margin="10,0,0,0" StrokeThickness="2"/>
-                </StackPanel>
-            </Button>
-
             <Grid Name="ListGrid" Grid.RowSpan="3" Height="50" Width="400" Margin="360,100,0,0" 
                   HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" 
                   Visibility="Hidden" Panel.ZIndex="2">

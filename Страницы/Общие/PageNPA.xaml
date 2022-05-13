@@ -5,46 +5,37 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Diplom.Страницы.Общие"
       mc:Ignorable="d" 
-      d:DesignHeight="870" d:DesignWidth="1920"
+      d:DesignHeight="970" d:DesignWidth="1920"
       Title="PageNPA">
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="400"/>
-            <RowDefinition Height="315"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="115"/>
         </Grid.RowDefinitions>
-        <Border VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="0.5"/>
-        <ScrollViewer>
+
+        <Border BorderThickness="0.5" BorderBrush="#333" Panel.ZIndex="-2" Background="White">
+            <TextBlock Text="ДОКУМЕНТЫ" FontSize="20" Foreground="#52B147" 
+                           FontWeight="Medium" HorizontalAlignment="Left" VerticalAlignment="Center"
+                           Margin="40,0,0,0"/>
+        </Border>
+
+        <ScrollViewer Grid.Row="1">
             <Grid>
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
                             Margin="0,40,0,0">
-            <Button Content="Федеральный закон" HorizontalAlignment="Left" FontSize="18" 
+                    <Button Content="Федеральный закон" HorizontalAlignment="Left" FontSize="18" 
                             Name="FederZakon" Click="FederZakon_Click" Height="30"/>
-        </StackPanel>
+                </StackPanel>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" 
                             Margin="0,0,290,0" Width="100">
-            <Image Source="/Resources/NPA/PDF.png" Height="112" VerticalAlignment="Top"/>
-        </StackPanel>
-        </Grid>
+                    <Image Source="/Resources/NPA/PDF.png" Height="112" VerticalAlignment="Top"/>
+                </StackPanel>
+            </Grid>
         </ScrollViewer>
-        <Grid Grid.Row="1">
-            <Button HorizontalAlignment="Left" Height="100" Margin="300,0,0,140">
-                <Image Source="/Resources/MainWindow/Grid0/Header.png" 
-                       HorizontalAlignment="Left" Height="70"/>
-            </Button>
 
-            <Grid x:Name="browserHost" Visibility="Hidden"/>
-
-            <TextBlock Text="+7 800 200 32 51" FontSize="24" FontFamily="Hectarum" 
-                               FontWeight="Bold" HorizontalAlignment="Right" 
-                               VerticalAlignment="Center" Margin="0,0,300,160"/>
-            <TextBlock Text="Круглосуточная поддержка" FontSize="14" FontFamily="Verdana" 
-                               HorizontalAlignment="Right" VerticalAlignment="Center" 
-                               Margin="0,0,292,120"/>
-        </Grid>
-
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <TextBlock Text="© 2022 Министерство Российской Федерации по развитию Дальнего Востока и Арктики" 
                                FontSize="14" FontFamily="Verdana" HorizontalAlignment="Left" 
                                VerticalAlignment="Center" Margin="300,0,0,0"/>
@@ -62,6 +53,6 @@
             </StackPanel>
         </Grid>
 
-        <Frame Grid.RowSpan="3" Name="FrameNPA" NavigationUIVisibility="Hidden"/>
+        <Frame Grid.RowSpan="4" Name="FrameNPA" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Page>

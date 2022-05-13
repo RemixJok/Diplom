@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom.Окна"
         mc:Ignorable="d"
-        Title="Мой участок" Height="2080" Width="1920" WindowStartupLocation="CenterScreen" 
+        Title="Мой участок" Height="1080" Width="1920" WindowStartupLocation="CenterScreen" 
         WindowState="Maximized" ResizeMode="CanResizeWithGrip" Icon="/Resources/Заголовки окон/MainLogo.ico">
     <Grid>
         <Grid>
@@ -16,13 +16,11 @@
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
 
-            <Button HorizontalAlignment="Left" Height="100" Name="Main">
-                <Image Source="/Resources/MainWindow/Grid0/Header.png" HorizontalAlignment="Left" 
+            <Image Source="/Resources/MainWindow/Grid0/Header.png" HorizontalAlignment="Left" 
                        Height="70" Margin="20,0,0,0"/>
-            </Button>
 
             <Button Name="MyArea" Content="Мой участок" HorizontalAlignment="Right" Margin="0,0,330,0"
-                    Foreground="#52B147"/>
+                        Foreground="#52B147"/>
 
             <Polygon HorizontalAlignment="Left" Stroke="LightGray" StrokeThickness="2" Points="0,0,0,100" 
                      Margin="1619,0,0,0"/>
@@ -84,37 +82,38 @@
 
             <Button Name="SendApplic" Grid.Row="1" Content="Отправить заявление" HorizontalAlignment="Right" 
                     Height="50" Style="{StaticResource BtnQuit}" Foreground="White" Margin="0,0,10,0" 
-                    Click="SendApplic_Click"/>
+                    Click="SendApplic_Click" Cursor="Hand"/>
 
             <ScrollViewer Grid.Row="2">
                 <Grid Background="#FFEEF3F6">
-                    <StackPanel Orientation="Vertical" Margin="50,30,50,430">
+                    <StackPanel Orientation="Vertical" Margin="50,30,50,0" VerticalAlignment="Top">
                         <Border Background="White" VerticalAlignment="Top" Height="57">
                             <TextBlock Text="1. Выберите участок в индивидуальное пользование" FontSize="18" 
                                        VerticalAlignment="Center" FontWeight="Bold" Margin="40,20,0,0" 
                                        FontFamily="Arial"/>
                         </Border>
                         <Border Background="White" VerticalAlignment="Top" Height="200">
-                            <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Vertical" Margin="40,20,0,0">
                                 <TextBlock Text="Для выбора участка из списка земельных участков, которые могут быть предоставлены уполномоченными органами, необходимо нажать кнопку «Перейти к выбору участка из списка», нажать кнопку «Выбрать участок»"
-                                           FontSize="14" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left"
-                                           Margin="40,20,0,0" TextWrapping="Wrap" Width="580" TextAlignment="Justify"/>
+                                           FontSize="14" Background="White" VerticalAlignment="Top" 
+                                           HorizontalAlignment="Left" TextWrapping="Wrap" Width="580" 
+                                           TextAlignment="Justify"/>
                             </StackPanel>
                         </Border>
                         <Border Background="White" Height="100" Margin="0,1,0,0">
                             <Button Content="Прейти к выбору участка из списка" Foreground="White" HorizontalAlignment="Left"
-                                    Margin="40,0,0,0" Height="50" Style="{StaticResource BtnQuit}" Click="GoToSelectArea"/>
+                                    Margin="40,0,0,0" Height="50" Style="{StaticResource BtnQuit}" Click="GoToSelectArea"
+                                    Cursor="Hand"/>
                         </Border>
                     </StackPanel>
 
-                    <StackPanel Orientation="Vertical" Margin="50,420,1400,100">
+                    <StackPanel Orientation="Vertical" Margin="50,420,1400,0" VerticalAlignment="Top">
                         <Border Background="White" Height="300">
-                            <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Vertical" Margin="40,30,0,0">
                                 <TextBlock Text="2. Выберите планируемую деятельность" FontSize="18" 
-                                       VerticalAlignment="Center" FontWeight="Bold" Margin="40,30,0,0" 
-                                       FontFamily="Arial"/>
+                                       VerticalAlignment="Center" FontWeight="Bold" FontFamily="Arial"/>
                                 <TextBlock Text="ПЛАНИРУЕМАЯ ДЕЯТЕЛЬНОСТЬ" Foreground="#6F8EA1" 
-                                           Margin="40,100,0,0" HorizontalAlignment="Left"/>
+                                           Margin="0,100,0,0" HorizontalAlignment="Left"/>
                             </StackPanel>
                         </Border>
                     </StackPanel>
@@ -131,106 +130,33 @@
                                 <TextBlock Text="Сведения об указанной гражданином на этапе подачи заявления планируемой деятельности используются уполномоченным органом как статистическая информация и правового значения не имеют."
                                            TextWrapping="Wrap" Margin="0,20,0,20"/>
                                 <TextBlock Text="ВАЖНО!" Foreground="Red" FontWeight="Bold"/>
-                                <TextBlock Text="По закону о «дальневосточном гектаре» заявитель обязан не позднее одного года со дня заключения договора безвозмездного пользования земельным участком направить в уполномоченный орган уведомление о выбранных виде или видах разрешенного использования земельного участка."
+                                <TextBlock Text="По закону о «дальневосточном гектаре» заявитель обязан не позднее одного года со дня заключения договора безвозмездного пользования земельным участком направить в отделение название о выбранном виде разрешенного использования земельного участка."
                                            TextWrapping="Wrap" FontWeight="Medium"/>
                             </StackPanel>
                         </Border>
                     </Border>
 
-                    <StackPanel Orientation="Vertical" Margin="50,750,1260,0" VerticalAlignment="Top">
-                        <Border Background="White" Height="200">
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="Прикрепите к заявлению копии (сканы) документов" FontSize="18"
-                                           VerticalAlignment="Center" FontWeight="Bold" Margin="40,30,0,0"
-                                           FontFamily="Arial"/>
-                                <TextBlock Text="ПАСПОРТНЫЕ ДАННЫЕ *" Foreground="#6F8EA1" 
-                                           Margin="40,40,0,0" HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Vertical" Margin="50,750,50,0" VerticalAlignment="Top">
+                        <Border Background="White">
+                            <StackPanel Orientation="Vertical" Margin="40,30">
+                                <TextBlock Text="3. Отдайте сотрудникам отделения, в котором вы получаете участок, следующие документы:" 
+                                           FontSize="18" VerticalAlignment="Center" FontWeight="Bold" FontFamily="Arial"
+                                           Margin="0,0,0,10"/>
+                                <TextBlock Text="1) Отсканированный паспорт, который заверен нотариусом"
+                                           FontSize="14" Margin="0,0,0,20"/>
 
-                                <Button Content="Выбрать файл" Name="ChooseFile" HorizontalAlignment="Left" 
-                                        Width="130" Margin="40,20,0,0" Style="{StaticResource BtnQuit}" 
-                                        Foreground="White" Click="ChooseFile_Click"/>
-                            </StackPanel>
-                        </Border>
+                                <TextBlock Text="2) Заявление на участок, его распечатанный вид вы можете попросить у сотрудников и заполнить в отделении"
+                                           FontSize="14" Margin="0,0,0,20"/>
 
-                        <Border Background="White" Height="150" Margin="0,3,0,0">
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="ЗАЯВЛЕНИЕ НА УЧАСТОК *" Foreground="#6F8EA1" 
-                                           Margin="40,40,0,0" HorizontalAlignment="Left"/>
-
-                                <Button Content="Выбрать файл" Name="ChooseFile1" HorizontalAlignment="Left" 
-                                        Width="130" Margin="40,20,0,0" Style="{StaticResource BtnQuit}" 
-                                        Foreground="White" Click="ChooseFile1_Click"/>
-                            </StackPanel>
-                        </Border>
-
-                        <Border Background="White" Height="150" Margin="0,3,0,0">
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="ПРОЧИЕ ДОКУМЕНТЫ" Foreground="#6F8EA1" 
-                                           Margin="40,40,0,0" HorizontalAlignment="Left"/>
-
-                                <Button Content="Выбрать файл" Name="ChooseFile2" HorizontalAlignment="Left" 
-                                        Width="130" Margin="40,20,0,0" Style="{StaticResource BtnQuit}" 
-                                        Foreground="White" Click="ChooseFile2_Click"/>
-                            </StackPanel>
-                        </Border>
-
-                        <Border Background="White" Height="150" Margin="0,3,0,0">
-                            <StackPanel Orientation="Vertical">
-                                <TextBlock Text="ДОВЕРЕННОСТЬ ПРЕДСТАВИТЕЛЯ" Foreground="#6F8EA1" 
-                                           Margin="40,40,0,0" HorizontalAlignment="Left"/>
-
-                                <Button Content="Выбрать файл" Name="ChooseFile3" HorizontalAlignment="Left"
-                                        Width="130" Margin="40,20,0,0" Style="{StaticResource BtnQuit}" 
-                                        Foreground="White" Click="ChooseFile3_Click"/>
+                                <TextBlock Text="3) Также иные документы, которые вам могут выдать сотрудники отделения"
+                                           FontSize="14"/>
                             </StackPanel>
                         </Border>
                     </StackPanel>
-
-                    <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="600,750,460,0">
-                        <Border Background="White" Height="200">
-                            <TextBox Name="TBPasport" IsEnabled="False" BorderThickness="0" 
-                                     VerticalAlignment="Center" HorizontalAlignment="Left"
-                                     VerticalContentAlignment="Center" TextWrapping="WrapWithOverflow"
-                                     Width="800"/>
-                        </Border>
-                        
-                        <Border Background="White" Height="150" Margin="0,3,0,0">
-                            <TextBox Name="TBLandAppl" IsEnabled="False" BorderThickness="0"
-                                     VerticalAlignment="Center" HorizontalAlignment="Left"
-                                     VerticalContentAlignment="Center" TextWrapping="WrapWithOverflow"
-                                     Width="800"/>
-                        </Border>
-                        
-                        <Border Background="White" Height="150" Margin="0,3,0,0">
-                            <TextBox Name="TBOtherDoc" IsEnabled="False" BorderThickness="0"
-                                     VerticalAlignment="Center" HorizontalAlignment="Left"
-                                     VerticalContentAlignment="Center" TextWrapping="WrapWithOverflow"
-                                     Width="800"/>
-                        </Border>
-                        
-                        <Border Background="White" Height="150" Margin="0,3,0,0">
-                            <TextBox Name="TBPowerOfAttorney" IsEnabled="False" BorderThickness="0"
-                                     VerticalAlignment="Center" HorizontalAlignment="Left"
-                                     VerticalContentAlignment="Center" TextWrapping="WrapWithOverflow"
-                                     Width="800"/>
-                        </Border>
-                    </StackPanel>
-                    
-                    <Border Margin="1450,750,50,0" VerticalAlignment="Top" Background="White" Height="660">
-                        <Border Margin="0,30,30,30" Background="#FFFEE1A5">
-                            <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                                <TextBlock Text="Для отправки заявления необходимо прикрепить сканы документов, подтверждающих личность (отсканированные копии разворотов двух страниц паспорта — с фотографией и регистрацией), подписать и прикрепить скан подписанного заявления."
-                                           TextWrapping="Wrap" Margin="0,20,10,20"/>
-                                <TextBlock Text="Обратите внимание, что прикрепление документов возможно на любом этапе рассмотрения заявления."
-                                           TextWrapping="Wrap" FontWeight="Medium" Margin="0,0,0,20"/>
-                                <TextBlock Text="Разрешена загрузка файлов только со следующими расширениями: txt, jpg, jpe, jpeg, doc, docx, xls, xlsx, pdf, png, bmp, zip, rar, 7z, rtf."
-                                           TextWrapping="Wrap" Margin="0,0,10,20"/>
-                                <TextBlock Text="Максимальный размер файла — 10 Мб."/>
-                            </StackPanel>
-                        </Border>
-                    </Border>
                 </Grid>
             </ScrollViewer>
+
+            <Frame Grid.Row="1" Grid.RowSpan="3" x:Name="CRArea" NavigationUIVisibility="Hidden"/>
 
             <Grid Grid.Row="3">
                 <Border VerticalAlignment="Center" Height="100" BorderThickness="0.3" BorderBrush="#333">

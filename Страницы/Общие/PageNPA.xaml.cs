@@ -15,13 +15,6 @@ namespace Diplom.Страницы.Общие
             InitializeComponent();
         }
 
-
-        //Навигация по фреймам
-        private void BtnBP_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         //Открытие браузера и переход на страницу
         private void FederZakon_Click(object sender, RoutedEventArgs e)
         {
