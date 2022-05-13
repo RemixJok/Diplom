@@ -28,7 +28,7 @@ namespace Diplom
 
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
-            Окна.Registration registration = new Окна.Registration(DataUser.User);
+            Окна.Registration registration = new Окна.Registration();
             registration.Show();
             Close();
         }

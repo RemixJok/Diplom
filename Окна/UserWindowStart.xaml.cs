@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -92,10 +93,12 @@ namespace Diplom.Окна
 
             DiplomEntities deleteUser = new DiplomEntities();
 
-            Пользователи user = deleteUser.Пользователи.Where(p => p.ID_Пользователя == 1).FirstOrDefault();
+            var user = DB.diplomEntities.Пользователи.Single(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
 
-            deleteUser.Пользователи.Remove(user);
-            deleteUser.SaveChanges();
+            DB.diplomEntities.Entry(user).State = EntityState.Deleted;
+            DB.diplomEntities.SaveChanges();
+
+            MessageBox.Show($"Пользователь {UserName.Text} удален");
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
