@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -63,6 +64,16 @@ namespace Diplom.Окна
             
             MessageBox.Show("Заявление на участок было направлено на почту для рассмотрения, после его рассмотрения вам позвонят и отправят уведомление на почту, которую вы оставили при регистрации.",
                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+
+            //Кнопка удаления пользователя
+            DiplomEntities deleteUser = new DiplomEntities();
+
+            //Нахождение пользователя с там же id, под которым выполнен вход
+            var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
+
+            //Удаление пользователя из БД 
+            DB.diplomEntities.Entry(user).State = EntityState.Deleted;
+            DB.diplomEntities.SaveChanges();
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
