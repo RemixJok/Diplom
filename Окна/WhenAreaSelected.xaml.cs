@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Net;
+using System.Net.Mail;
+using System.Reflection;
+using System;
 
 namespace Diplom.Окна
 {
@@ -69,6 +62,25 @@ namespace Diplom.Окна
         //Кнопка отправки заявления
         private void SendApplic_Click(object sender, RoutedEventArgs e)
         {
+            MailDataWindow mailData = new MailDataWindow();
+            mailData.Show();
+
+            bool windowState = Application.Current.MainWindow.IsLoaded;
+
+            if (windowState = IsActive)
+            {
+                MessageBox.Show("Окно регистации закрыто");
+            }
+
+
+            /*SmtpClient client = new SmtpClient();
+            client.Credentials = new NetworkCredential();
+            client.EnableSsl = true;
+
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(DataUser.User.Адрес_электронной_почты.ToString());
+            mail.To.Add(new MailAddress("cepelev2001@mail.ru"));
+
             MessageBox.Show("Заявление на участок было направлено на почту для рассмотрения, после его рассмотрения вам позвонят и отправят уведомление на почту, которую вы оставили при регистрации.",
                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 
@@ -84,7 +96,7 @@ namespace Diplom.Окна
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            Close();
+            Close();*/
         }
 
         //Открытие браузера и переход на страницу
