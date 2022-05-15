@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom.Окна"
         mc:Ignorable="d"
-        Title="Данные почты" Height="250" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Данные почты" Height="250" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Loaded="Window_Loaded">
     <Grid>
         <TextBlock Text="Введите данные почты" VerticalAlignment="Top" HorizontalAlignment="Center"
                    FontSize="18" Margin="0,10"/>

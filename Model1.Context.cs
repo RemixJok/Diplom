@@ -25,7 +25,6 @@ namespace Diplom
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Деятельность_на_ЗУ> Деятельность_на_ЗУ { get; set; }
         public virtual DbSet<Заявки> Заявки { get; set; }
         public virtual DbSet<Пользователи> Пользователи { get; set; }
