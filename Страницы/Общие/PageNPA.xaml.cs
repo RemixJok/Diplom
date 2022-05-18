@@ -15,7 +15,7 @@ namespace Diplom.Страницы.Общие
             InitializeComponent();
         }
 
-        //Открытие браузера и переход на страницу
+        // Открытие браузера и переход на страницу
         private void FederZakon_Click(object sender, RoutedEventArgs e)
         {
             ChromeOptions options = new ChromeOptions();

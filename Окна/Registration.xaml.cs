@@ -22,7 +22,7 @@ namespace Diplom.Окна
         }
 
 
-        //Кнопка регистрации
+        // Кнопка регистрации
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
             var errorMessage = CheckErrors();
@@ -33,7 +33,7 @@ namespace Diplom.Окна
             }
             else
             {
-                //Добавление данных в БД
+                //  Добавление данных в БД
                 var userInfo = new Пользователи()
                 {
                     Логин = Login.Text.Trim().ToLower(),
@@ -62,7 +62,7 @@ namespace Diplom.Окна
             }
         }
 
-        //Кнопка назад
+        // Кнопка назад
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             Окна.LoginWindow loginWindow = new Окна.LoginWindow();
@@ -70,7 +70,7 @@ namespace Diplom.Окна
             Close();
         }
 
-        //Проверка на ошибки
+        // Проверка на ошибки
         private string CheckErrors()
         {
             var errorBuilder = new StringBuilder();
@@ -139,7 +139,7 @@ namespace Diplom.Окна
         }
 
 
-        //Ограничение на вписание только цифр
+        // Ограничение на вписание только цифр
         private void Phone_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             {

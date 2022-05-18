@@ -23,7 +23,7 @@ namespace Diplom.Страницы.Общие
             DataContext = _currentUser;
         }
 
-        //Кнопка сохранения введенной информации при регистрации и проверка на ошибки
+        // Кнопка сохранения введенной информации при регистрации и проверка на ошибки
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
@@ -84,7 +84,7 @@ namespace Diplom.Страницы.Общие
             }
         }
 
-        //Ограничение на вписание только цифр
+        // Ограничение на вписание только цифр
         private void Phone_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             {

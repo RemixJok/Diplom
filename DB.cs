@@ -2,7 +2,7 @@
 {
     internal class DB
     {
-        //Привязка БД
+        // Привязка БД
         public static DiplomEntities diplomEntities = new DiplomEntities();
     }
 }

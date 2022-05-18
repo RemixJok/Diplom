@@ -13,12 +13,12 @@ namespace Diplom
         {
             InitializeComponent();
 
-            //Открытие окна с заданным фреймом
+            // Открытие окна с заданным фреймом
             ChoseArea.Navigate(new Страницы.В_MainWindow.Slide1());
             Link.ChoseArea = ChoseArea;
         }
 
-        //Простые кнопки
+        // Простые кнопки
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             Окна.LoginWindow loginWindow = new Окна.LoginWindow();
@@ -33,7 +33,7 @@ namespace Diplom
             Close();
         }
 
-        //Открытие браузера и переход на страницу
+        // Открытие браузера и переход на страницу
         private void FindNeighbor_Click(object sender, RoutedEventArgs e)
         {
             ChromeOptions options = new ChromeOptions();

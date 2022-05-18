@@ -15,12 +15,12 @@ namespace Diplom.Окна
             DB.diplomEntities = new DiplomEntities();
         }
 
-        //Кнопка для входа
+        // Кнопка для входа
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                //Статический класс "DataUser", зранит данные о пользователе
+                // Статический класс "DataUser", хранит данные о пользователе
                 DataUser.User = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.Логин == txtLogin.Text && p.Пароль == txtPassword.Password);
 
                 if (DataUser.User == null)
@@ -43,7 +43,7 @@ namespace Diplom.Окна
             }
         }
 
-        //Кнопка регистрации
+        // Кнопка регистрации
         private void BtnGoToReg_Click(object sender, RoutedEventArgs e)
         {
             Registration registration = new Registration();
@@ -51,7 +51,7 @@ namespace Diplom.Окна
             Close();
         }
 
-        //Кнопка назад
+        // Кнопка назад
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -59,7 +59,7 @@ namespace Diplom.Окна
             Close();
         }
 
-        //Вотермарка в текстбоксе "Пароль"
+        // Вотермарка в текстбоксе "Пароль"
         private void OnPasswordChanged(object sender, RoutedEventArgs e)
         {
             if (txtPassword.Password.Length > 0)

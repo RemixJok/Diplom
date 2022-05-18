@@ -4,7 +4,7 @@ namespace Diplom
 {
     internal class Link
     {
-        //Привязка фрейма
+        // Привязка фрейма
         public static Frame ChoseArea { get; set; }
     }
 }

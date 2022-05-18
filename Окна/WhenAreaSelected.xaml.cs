@@ -254,14 +254,13 @@ namespace Diplom.Окна
             // Нахождение пользователя с там же id, под которым выполнен вход
             var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
 
-            //Удаление пользователя из БД 
+            // Удаление пользователя из БД 
             DB.diplomEntities.Entry(user).State = EntityState.Deleted;
             DB.diplomEntities.SaveChanges();
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();*/
-            
         }
 
         // Открытие браузера и переход на страницу

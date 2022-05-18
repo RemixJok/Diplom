@@ -17,7 +17,7 @@ namespace Diplom.Окна
         {
             InitializeComponent();
 
-            //Вывод данных в textblock
+            // Вывод данных в textblock
             UserName.Text = selectedUser.ФИО.Trim();
             FIO.Text = selectedUser.ФИО.Trim();
             Pol.Text = selectedUser.Пол;
@@ -32,7 +32,7 @@ namespace Diplom.Окна
             RegAdress.Text = selectedUser.Адрес_регистрации.Trim();
         }
 
-        //Открытие или Закрытие бордера по кнопке
+        // Открытие или Закрытие бордера по кнопке
         private void OpenList(object sender, RoutedEventArgs e)
         {
             if (ListGrid.Visibility == Visibility.Hidden)
@@ -57,7 +57,7 @@ namespace Diplom.Окна
                 MoreInfo.Visibility = Visibility.Hidden;
         }
 
-        //Навигация по фреймам
+        // Навигация по фреймам
         private void BtnNpa_Click(object sender, RoutedEventArgs e)
         {
             FrameNPABP.Navigate(new Страницы.Общие.PageNPA());
@@ -75,7 +75,7 @@ namespace Diplom.Окна
             FrameNPABP.Navigate(new Страницы.В_UserPage.FAQ());
         }
 
-        //Простые кнопки
+        // Простые кнопки
         private void MyArea_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить ваши данные на нашу почту," +
@@ -102,19 +102,19 @@ namespace Diplom.Окна
 
         private void DeleteInfo_Click(object sender, RoutedEventArgs e)
         {
-            //Показ сообщения перед удалением
+            // Показ сообщения перед удалением
             MessageBoxResult result = MessageBox.Show($"Вы точно хотите удалить аккаунт пользователя {UserName.Text}?",
                 "Уведомление!", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
-                //Кнопка удаления пользователя
+                // Кнопка удаления пользователя
                 DiplomEntities deleteUser = new DiplomEntities();
 
-                //Нахождение пользователя с там же id, под которым выполнен вход
+                // Нахождение пользователя с там же id, под которым выполнен вход
                 var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
 
-                //Удаление пользователя из БД 
+                // Удаление пользователя из БД 
                 DB.diplomEntities.Entry(user).State = EntityState.Deleted;
                 DB.diplomEntities.SaveChanges();
 
@@ -133,7 +133,7 @@ namespace Diplom.Окна
             Close();
         }
 
-        //Открытие браузера и переход на страницу
+        // Открытие браузера и переход на страницу
         private void DownlInstr_Click(object sender, RoutedEventArgs e)
         {
             ChromeOptions options = new ChromeOptions();

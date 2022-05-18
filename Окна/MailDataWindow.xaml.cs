@@ -15,9 +15,11 @@ namespace Diplom.Окна
         {
             InitializeComponent();
 
+            // Вывод эл. почты в текст бокс
             txtBoxLogin.Text = DataUser.User.Адрес_электронной_почты.ToString();
         }
 
+        // Проверка на ошибки
         private string CheckErrors()
         {
             var errorBuilder = new StringBuilder();
@@ -28,6 +30,7 @@ namespace Diplom.Окна
             return errorBuilder.ToString();
         }
 
+        // Запись данных из текст бокса в класс - LoginAndPassMail
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
             var errorMessage = CheckErrors();
@@ -45,7 +48,7 @@ namespace Diplom.Окна
             }
         }
 
-        //Убирание кнопки закрыть у окна
+        // Убирание кнопки закрыть у окна
         private const int GWL_STYLE = -16;
         private const int WS_SYSMENU = 0x80000;
         [DllImport("user32.dll", SetLastError = true)]
