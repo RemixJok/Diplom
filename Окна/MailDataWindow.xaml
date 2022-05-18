@@ -21,9 +21,9 @@
 
         <StackPanel Orientation="Vertical">
             <TextBox x:Name="txtBoxLogin" HorizontalAlignment="Center" FontSize="14" Width="150" 
-                     Margin="60,70,0,0" IsEnabled="False"/>
+                     Margin="80,70,0,0" IsEnabled="False"/>
             <PasswordBox x:Name="txtBoxPassword" HorizontalAlignment="Center" FontSize="14" Width="150"
-                         Margin="60,25,0,0"/>
+                         Margin="80,25,0,0"/>
         </StackPanel>
     </Grid>
 </Window>
