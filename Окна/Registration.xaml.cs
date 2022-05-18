@@ -94,6 +94,11 @@ namespace Diplom.Окна
             if (Birthday.Text.Length < 10)
                 errorBuilder.AppendLine("Поле 'Дата рождения' не может содержать меньше 10 символов!");
 
+            if (Nationality.Text.Contains(value: "Россия".ToLower()) && Nationality.Text.Contains(value: "Украина".ToLower()) && Nationality.Text.Contains(value: "Казахстан".ToLower()) 
+                && Nationality.Text.Contains(value: "Беларусь".ToLower()) && Nationality.Text.Contains(value: "Литва".ToLower()) && Nationality.Text.Contains(value: "Латвия".ToLower()) 
+                && Nationality.Text.Contains(value: "Эстония".ToLower()))
+                errorBuilder.AppendLine("В поле 'Гражданство' указано не разрешенное гражданство");
+
             if (Pasport.Text.Length < 30)
                 errorBuilder.AppendLine("Поле 'Данные паспорта' не может быть меньше 30 символов!");
 

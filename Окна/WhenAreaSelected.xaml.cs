@@ -5,9 +5,7 @@ using System.Windows;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Word = Microsoft.Office.Interop.Word;
-using System.Threading;
-using System;
-using System.Data.Entity;
+using System.IO;
 
 namespace Diplom.Окна
 {
@@ -41,7 +39,6 @@ namespace Diplom.Окна
         }
 
         // Простые кнопки
-
         private void MyProfile_Click(object sender, RoutedEventArgs e)
         {
             UserPageStart userPage = new UserPageStart(DataUser.User);
@@ -61,6 +58,13 @@ namespace Diplom.Окна
             Close();
         }
 
+        private void ChoseArea_Click(object sender, RoutedEventArgs e)
+        {
+            SelectArea selectArea = new SelectArea(UserName.Text);
+            selectArea.Show();
+            Close();
+        }
+
         // Кнопка отправки заявления
         private void SendApplic_Click(object sender, RoutedEventArgs e)
         {
@@ -71,7 +75,7 @@ namespace Diplom.Окна
             var userLogin = LoginAndPassMail.Login.ToString();
             var userPassword = LoginAndPassMail.Password.ToString();
 
-            //MessageBox.Show("Подождите выполняется отправка данных");
+            MessageBox.Show("Подождите 5 секунд выполняется отправка данных");
 
             // Переменные для импорта в ворд
             var idUser = DataUser.User.ID_Пользователя.ToString();
@@ -126,124 +130,125 @@ namespace Diplom.Окна
             cellRange = userInfoTable.Cell(2, 1).Range;
             cellRange.Text = "ID_Пользователя";
             cellRange = userInfoTable.Cell(2, 2).Range;
-            cellRange.Text = idUser.ToString();
+            cellRange.Text = idUser;
 
             cellRange = userInfoTable.Cell(3, 1).Range;
             cellRange.Text = "ФИО";
             cellRange = userInfoTable.Cell(3, 2).Range;
-            cellRange.Text = name.ToString();
+            cellRange.Text = name;
 
             cellRange = userInfoTable.Cell(4, 1).Range;
             cellRange.Text = "Пол";
             cellRange = userInfoTable.Cell(4, 2).Range;
-            cellRange.Text = pol.ToString();
+            cellRange.Text = pol;
 
             cellRange = userInfoTable.Cell(5, 1).Range;
             cellRange.Text = "Дата рождения";
             cellRange = userInfoTable.Cell(5, 2).Range;
-            cellRange.Text = birthday.ToString();
+            cellRange.Text = birthday;
 
             cellRange = userInfoTable.Cell(6, 1).Range;
             cellRange.Text = "Гражданство";
             cellRange = userInfoTable.Cell(6, 2).Range;
-            cellRange.Text = nationality.ToString();
+            cellRange.Text = nationality;
 
             cellRange = userInfoTable.Cell(7, 1).Range;
             cellRange.Text = "Данные паспорта";
             cellRange = userInfoTable.Cell(7, 2).Range;
-            cellRange.Text = pasport.ToString();
+            cellRange.Text = pasport;
 
             cellRange = userInfoTable.Cell(8, 1).Range;
             cellRange.Text = "СНИЛС";
             cellRange = userInfoTable.Cell(8, 2).Range;
-            cellRange.Text = snils.ToString();
+            cellRange.Text = snils;
 
             cellRange = userInfoTable.Cell(9, 1).Range;
             cellRange.Text = "ИНН";
             cellRange = userInfoTable.Cell(9, 2).Range;
-            cellRange.Text = inn.ToString();
+            cellRange.Text = inn;
 
             cellRange = userInfoTable.Cell(10, 1).Range;
             cellRange.Text = "Мобильный телефон";
             cellRange = userInfoTable.Cell(10, 2).Range;
-            cellRange.Text = phone.ToString();
+            cellRange.Text = phone;
 
             cellRange = userInfoTable.Cell(11, 1).Range;
             cellRange.Text = "Электронная почта";
             cellRange = userInfoTable.Cell(11, 2).Range;
-            cellRange.Text = email.ToString();
+            cellRange.Text = email;
 
             cellRange = userInfoTable.Cell(12, 1).Range;
             cellRange.Text = "Почтовый адрес";
             cellRange = userInfoTable.Cell(12, 2).Range;
-            cellRange.Text = mailAdress.ToString();
+            cellRange.Text = mailAdress;
 
             cellRange = userInfoTable.Cell(13, 1).Range;
             cellRange.Text = "Адрес регистрации";
             cellRange = userInfoTable.Cell(13, 2).Range;
-            cellRange.Text = registrationAdress.ToString();
+            cellRange.Text = registrationAdress;
 
             cellRange = userInfoTable.Cell(14, 1).Range;
             cellRange.Text = "ID_Участка";
             cellRange = userInfoTable.Cell(14, 2).Range;
-            cellRange.Text = idArea.ToString();
+            cellRange.Text = idArea;
 
             cellRange = userInfoTable.Cell(15, 1).Range;
             cellRange.Text = "Регион";
             cellRange = userInfoTable.Cell(15, 2).Range;
-            cellRange.Text = region.ToString();
+            cellRange.Text = region;
 
             cellRange = userInfoTable.Cell(16, 1).Range;
             cellRange.Text = "Адрес";
             cellRange = userInfoTable.Cell(16, 2).Range;
-            cellRange.Text = adress.ToString();
+            cellRange.Text = adress;
 
             cellRange = userInfoTable.Cell(17, 1).Range;
             cellRange.Text = "Дата постановки на учет";
             cellRange = userInfoTable.Cell(17, 2).Range;
-            cellRange.Text = dateToUchet.ToString();
+            cellRange.Text = dateToUchet;
 
             cellRange = userInfoTable.Cell(18, 1).Range;
             cellRange.Text = "Площадь земельного участка";
             cellRange = userInfoTable.Cell(18, 2).Range;
-            cellRange.Text = square.ToString();
+            cellRange.Text = square;
 
-            document.SaveAs2(@"C:\Users\Danila\Desktop\Test.docx");
+            document.SaveAs2(@"C:\Users\cepel\Desktop\Заявление.docx");
+            document.Close();
+            application.Quit();
 
-            //MessageBox.Show(userLogin, $"Уведомление, {userPassword}");
-
-            /*System.Net.ServicePointManager.SecurityProtocol = 
-                System.Net.SecurityProtocolType.Tls12
-                | System.Net.SecurityProtocolType.Ssl3
-                | System.Net.SecurityProtocolType.Tls
-                | System.Net.SecurityProtocolType.Tls11;
+            ServicePointManager.SecurityProtocol = 
+                SecurityProtocolType.Tls12
+                | SecurityProtocolType.Ssl3
+                | SecurityProtocolType.Tls
+                | SecurityProtocolType.Tls11;
 
             // Отправка E-mail письма
             SmtpClient client = new SmtpClient();
+            client.UseDefaultCredentials = false;
             client.Credentials = new NetworkCredential
             {
                 Password = userPassword,
                 UserName = userLogin,
             }; // Логин и пароль от почты пользователя
 
+            client.Port = 2525;
             client.Host = "smtp.mail.ru";
-            client.Port = 25;
             client.EnableSsl = true;
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress(DataUser.User.Адрес_электронной_почты.ToString(), DataUser.User.ФИО); // От кого
             message.To.Add(new MailAddress("cepelev2001@mail.ru")); // Кому
-            message.Subject = "Test";
-            message.Body = "test message";
+            message.Subject = $"Заявление на участок от пользователя {name}";
             message.BodyEncoding = System.Text.Encoding.UTF8;
-            //mail.Attachments.Add(new Attachment(""));
+            message.Attachments.Add(new Attachment(@"C:\Users\cepel\Desktop\Заявление.docx"));
 
-            client.Send(message);*/
+            client.Send(message);
+            client.Dispose();
 
             MessageBox.Show("Заявление на участок было направлено на почту для рассмотрения, после его рассмотрения вам позвонят и отправят уведомление на почту, которую вы оставили при регистрации.",
                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // Кнопка удаления пользователя
+            /*// Кнопка удаления пользователя
             DiplomEntities deleteUser = new DiplomEntities();
 
             // Нахождение пользователя с там же id, под которым выполнен вход
@@ -255,7 +260,7 @@ namespace Diplom.Окна
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            Close();
+            Close();*/
             
         }
 

@@ -86,7 +86,6 @@
 
             <ScrollViewer Grid.Row="2">
                 <Grid Background="#FFEEF3F6">
-
                     <StackPanel Orientation="Vertical" Margin="50,50,50,700">
                         <Border Background="White" VerticalAlignment="Top" Height="200">
                             <StackPanel Orientation="Vertical" Margin="50,20,1500,0">
@@ -100,6 +99,11 @@
                                            FontSize="14"/>
                             </StackPanel>
                         </Border>
+                        <Border Background="White" VerticalAlignment="Top" Height="100" Margin="0,1,0,0">
+                            <Button Name="ChoseArea" Content="Выбрать другой участок" Style="{StaticResource BtnQuit}"
+                                Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                Margin="40,0,0,0" Click="ChoseArea_Click" Height="50"/>
+                        </Border>
                     </StackPanel>
 
                     <Border VerticalAlignment="Top" Margin="400,50,1000,0" Height="200">
@@ -111,7 +115,7 @@
                         </StackPanel>
                     </Border>
 
-                    <StackPanel Orientation="Vertical" Margin="50,270,1400,0" VerticalAlignment="Top">
+                    <StackPanel Orientation="Vertical" Margin="50,370,1400,0" VerticalAlignment="Top">
                         <Border Background="White" Height="300">
                             <StackPanel Orientation="Vertical" Margin="40,30,0,0">
                                 <TextBlock Text="Выберите планируемую деятельность" FontSize="18" 
@@ -122,13 +126,13 @@
                         </Border>
                     </StackPanel>
 
-                    <Border Margin="500,270,1000,0" VerticalAlignment="Top" Height="300" Background="White">
+                    <Border Margin="500,370,1000,0" VerticalAlignment="Top" Height="300" Background="White">
                         <ComboBox SelectedItem="{Binding Деятельность_на_ЗУ}" Margin="0,140,40,125" 
                                   x:Name="ComboPlanActiv" DisplayMemberPath="Наименование_деятельности" 
                                   VerticalContentAlignment="Center"/>
                     </Border>
 
-                    <Border Margin="900,270,50,0" Background="White" VerticalAlignment="Top" Height="300">
+                    <Border Margin="900,370,50,0" Background="White" VerticalAlignment="Top" Height="300">
                         <Border Margin="581,30,30,30" Background="#FFFEE1A5">
                             <StackPanel Orientation="Vertical" Margin="20,0,0,0">
                                 <TextBlock Text="Сведения об указанной гражданином на этапе подачи заявления планируемой деятельности используются уполномоченным органом как статистическая информация и правового значения не имеют."
@@ -140,7 +144,7 @@
                         </Border>
                     </Border>
 
-                    <StackPanel Orientation="Vertical" Margin="50,590,50,0" VerticalAlignment="Top">
+                    <StackPanel Orientation="Vertical" Margin="50,690,50,0" VerticalAlignment="Top">
                         <Border Background="White">
                             <StackPanel Orientation="Vertical" Margin="40,30">
                                 <TextBlock Text="3. Отдайте сотрудникам отделения, в котором вы получаете участок, следующие документы:" 

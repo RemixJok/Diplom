@@ -17,12 +17,10 @@ namespace Diplom.Окна
         {
             InitializeComponent();
 
-            //Вывод деятельности на ЗУ в комбобокс
-            ComboPlanActiv.ItemsSource = DB.diplomEntities.Деятельность_на_ЗУ.ToList();
             UserName.Text = userName;
         }
 
-        //Открытие или Закрытие бордера по кнопке
+        // Открытие или Закрытие бордера по кнопке
         private void OpenUserMenu(object sender, RoutedEventArgs e)
         {
             if (UserGrid.Visibility == Visibility.Hidden)
@@ -31,7 +29,7 @@ namespace Diplom.Окна
                 UserGrid.Visibility = Visibility.Hidden;
         }
 
-        //Простые кнопки
+        // Простые кнопки
         private void GoToSelectArea(object sender, RoutedEventArgs e)
         {
             SelectArea selectArea = new SelectArea(UserName.Text);
@@ -58,13 +56,7 @@ namespace Diplom.Окна
             Close();
         }
 
-        //Кнопка отправки заявления
-        private void SendApplic_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Вы не выбранли участок", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        //Открытие браузера и переход на страницу
+        // Открытие браузера и переход на страницу
         private void DownlInstr_Click(object sender, RoutedEventArgs e)
         {
             ChromeOptions options = new ChromeOptions();

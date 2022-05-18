@@ -1,0 +1,38 @@
+﻿<Window x:Class="Diplom.Окна.Timer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Timer" Height="300" Width="300">
+    
+    <Window.Resources>
+        <Storyboard x:Key="Storyboard1" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ellipse" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                <SplineDoubleKeyFrame KeyTime="00:00:05" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Ellipse x:Name="ellipse" Margin="55,49,54,38" StrokeThickness="20" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+            <Ellipse.Stroke>
+                <LinearGradientBrush EndPoint="0.445,0.997" StartPoint="0.555,0.003">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF0052FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Ellipse.Stroke>
+        </Ellipse>
+    </Grid>
+</Window>
