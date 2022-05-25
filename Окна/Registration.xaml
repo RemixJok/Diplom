@@ -66,7 +66,7 @@
             <TextBlock Text="Пароль не меньше 8 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
             <TextBlock Text="ФИО не меньше 20 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
             <TextBlock Margin="0,0,0,30" Height="30"/>
-            <TextBlock Margin="0,0,0,30" Height="30"/>
+            <TextBlock Text="Дату указывать через «точку» Пример 01.01.2000" FontSize="18" Margin="0,0,0,30" Height="30"/>
             <TextBlock Text="Гражданство только «Россия», «Украина», «Казахстан», «Беларусь», «Литва», «Латвия», «Эстония»" 
                        TextWrapping="Wrap" FontSize="18" Margin="0,0,0,10" Height="50"/>
             <TextBlock Text="В этом поле укажите: серию и номер, когда и кем выдан" 
@@ -74,7 +74,8 @@
             <TextBlock Text="СНИЛС не меньше 11 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
             <TextBlock Text="ИНН не меньше 12 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
             <TextBlock Text="Мобильный телефон не меньше 11 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="Адрес электронной почты не меньше 14 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
+            <TextBlock Text="Адрес электронной почты не меньше 14 символов и только @mail.ru" FontSize="18" 
+                       TextWrapping="Wrap" Margin="0,0,0,10" Height="50"/>
             <TextBlock Text="Почтовый адрес не меньше 30 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
             <TextBlock Text="Адрес регистрации не меньше 30 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
         </StackPanel>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,6 +41,15 @@ namespace Diplom.Страницы.Общие
             if (Convert.ToString(_currentUser.Дата_рождения).Length < 10)
                 errors.AppendLine("Поле 'Дата рождения' не может содержать меньше 10 символов!");
 
+            DateTime dateBirthday = DateTime.ParseExact(Birthday.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            if (dateBirthday < new DateTime(1960, 1, 1) || new DateTime(2002, 12, 31) < dateBirthday)
+                errors.AppendLine("Дата рождения не может быть меньше чем 01.01.1960 или больше чем 31.12.2002");
+
+            if (Nationality.Text.Contains(value: "Россия".ToLower()) && Nationality.Text.Contains(value: "Украина".ToLower()) && Nationality.Text.Contains(value: "Казахстан".ToLower())
+                && Nationality.Text.Contains(value: "Беларусь".ToLower()) && Nationality.Text.Contains(value: "Литва".ToLower()) && Nationality.Text.Contains(value: "Латвия".ToLower())
+                && Nationality.Text.Contains(value: "Эстония".ToLower()))
+                errors.AppendLine("В поле 'Гражданство' указано не разрешенное гражданство");
+
             if (_currentUser.Гражданство.Length < 30)
                 errors.AppendLine("Поле 'Данные паспорта' не может быть меньше 30 символов!");
 
@@ -55,8 +65,8 @@ namespace Diplom.Страницы.Общие
             if (_currentUser.Адрес_электронной_почты.Length < 14)
                 errors.AppendLine("Поле 'Адрес электронной почты' не может быть меньше 14 символов!");
 
-            if (_currentUser.Адрес_электронной_почты.Contains(value: "@") && Email.Text.Contains(value: "."))
-                errors.AppendLine("Поле 'Адрес электронной почты' не содержит @ или .");
+            if (Email.Text.Contains(value: "@mail.ru"))
+                errors.AppendLine("Поле 'Адрес электронной почты' не содержит '@mail.ru'");
 
             if (_currentUser.Почтовый_адрес.Length < 30)
                 errors.AppendLine("Поле 'Почтовый адрес' не может быть меньше 30 символов!");

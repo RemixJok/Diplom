@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
@@ -56,17 +57,13 @@ namespace Diplom.Окна
             Close();
         }
 
-        // Открытие браузера и переход на страницу
+        // Открытие инструкции пользователя
         private void DownlInstr_Click(object sender, RoutedEventArgs e)
         {
-            ChromeOptions options = new ChromeOptions();
-            options.PageLoadStrategy = PageLoadStrategy.Normal;
-            var driverService = ChromeDriverService.CreateDefaultService();
-            driverService.HideCommandPromptWindow = true;
-
-            IWebDriver vk = new ChromeDriver(driverService, new ChromeOptions());
-            vk.Navigate().GoToUrl(@"https://fareast.parma.tech/storage/npa-doc/file_11.pdf");
-            vk.Manage().Window.Maximize();
+            Process wordProcess = new Process();
+            wordProcess.StartInfo.FileName = @"C:\Users\cepel\Desktop\UserInstruction.pdf";
+            wordProcess.StartInfo.UseShellExecute = true;
+            wordProcess.Start();
         }
     }
 }

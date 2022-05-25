@@ -1,21 +1,19 @@
 ﻿using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using Word = Microsoft.Office.Interop.Word;
 using System.Net;
 using System.Net.Mail;
-using System.Windows;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using Word = Microsoft.Office.Interop.Word;
-using System.IO;
-using System.Diagnostics;
+using Diplom.Окна;
 
-namespace Diplom.Окна
+namespace Diplom.Страницы.В_UserWindow
 {
     /// <summary>
     /// Логика взаимодействия для WhenAreaSelected.xaml
     /// </summary>
-    public partial class WhenAreaSelected : Window
+    public partial class WhenAreaSelected : Page
     {
-        public WhenAreaSelected(string userName)
+        public WhenAreaSelected()
         {
             InitializeComponent();
 
@@ -27,46 +25,13 @@ namespace Diplom.Окна
 
             // Вывод деятельности на ЗУ в комбобокс
             ComboPlanActiv.ItemsSource = DB.diplomEntities.Деятельность_на_ЗУ.ToList();
-            UserName.Text = userName;
-        }
-
-        // Открытие или Закрытие бордера по кнопке
-        private void OpenUserMenu(object sender, RoutedEventArgs e)
-        {
-            if (UserGrid.Visibility == Visibility.Hidden)
-                UserGrid.Visibility = Visibility.Visible;
-            else
-                UserGrid.Visibility = Visibility.Hidden;
-        }
-
-        // Простые кнопки
-        private void MyProfile_Click(object sender, RoutedEventArgs e)
-        {
-            UserPageStart userPage = new UserPageStart(DataUser.User);
-            userPage.Show();
-            Close();
-        }
-
-        private void FAQ_Click(object sender, RoutedEventArgs e)
-        {
-            CRArea.Navigate(new Страницы.В_UserPage.FAQ());
-        }
-
-        private void Quit_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
         }
 
         private void ChoseArea_Click(object sender, RoutedEventArgs e)
         {
-            SelectArea selectArea = new SelectArea(UserName.Text);
-            selectArea.Show();
-            Close();
+            WhenAreaSl.Navigate(new SelectArea());
         }
 
-        // Кнопка отправки заявления
         private void SendApplic_Click(object sender, RoutedEventArgs e)
         {
             MailDataWindow mailData = new MailDataWindow();
@@ -217,7 +182,7 @@ namespace Diplom.Окна
             document.Close();
             application.Quit();
 
-            ServicePointManager.SecurityProtocol = 
+            ServicePointManager.SecurityProtocol =
                 SecurityProtocolType.Tls12
                 | SecurityProtocolType.Ssl3
                 | SecurityProtocolType.Tls
@@ -262,15 +227,6 @@ namespace Diplom.Окна
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();*/
-        }
-
-        // Открытие инструкции пользователя
-        private void DownlInstr_Click(object sender, RoutedEventArgs e)
-        {
-            Process wordProcess = new Process();
-            wordProcess.StartInfo.FileName = @"C:\Users\cepel\Desktop\UserInstruction.pdf";
-            wordProcess.StartInfo.UseShellExecute = true;
-            wordProcess.Start();
         }
     }
 }

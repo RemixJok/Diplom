@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,14 +19,10 @@ namespace Diplom.Страницы.Общие
         // Открытие браузера и переход на страницу
         private void FederZakon_Click(object sender, RoutedEventArgs e)
         {
-            ChromeOptions options = new ChromeOptions();
-            options.PageLoadStrategy = PageLoadStrategy.Normal;
-            var driverService = ChromeDriverService.CreateDefaultService();
-            driverService.HideCommandPromptWindow = true;
-
-            IWebDriver vk = new ChromeDriver(driverService, new ChromeOptions());
-            vk.Navigate().GoToUrl(@"https://fareast.parma.tech/storage/npa-doc/file_11.pdf");
-            vk.Manage().Window.Maximize();
+            Process wordProcess = new Process();
+            wordProcess.StartInfo.FileName = @"C:\Users\cepel\Desktop\Diplom\Resources\Documents\FedZakon.pdf";
+            wordProcess.StartInfo.UseShellExecute = true;
+            wordProcess.Start();
         }
 
         private void VK_Click(object sender, RoutedEventArgs e)

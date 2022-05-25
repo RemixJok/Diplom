@@ -1,0 +1,49 @@
+﻿<Page x:Class="Diplom.Страницы.В_UserWindow.SelectArea"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Страницы.В_UserWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="780" d:DesignWidth="1920"
+      Title="Выбор участка">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Border BorderThickness="0.3" BorderBrush="#333" Panel.ZIndex="-2" Background="White">
+            <TextBlock Text="Список свободных земельных участков" FontSize="20" Foreground="#52B147" 
+                           FontWeight="Medium" HorizontalAlignment="Left" VerticalAlignment="Center"
+                           Margin="40,0,0,0"/>
+        </Border>
+        
+        <ScrollViewer Grid.Row="1">
+            <DataGrid x:Name="DGridArea" AutoGenerateColumns="False" IsReadOnly="True" FontSize="14" 
+                          CanUserResizeRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="Region" Header="Регион" Binding="{Binding Регион}" Width="300" FontSize="14"/>
+                    <DataGridTextColumn x:Name="Adress" Header="Адрес" Binding="{Binding Адрес}" Width="*" FontSize="14"/>
+                    <DataGridTextColumn x:Name="Square" Header="Площадь кв.м." Binding="{Binding Площадь_ЗУ}" Width="200" FontSize="14"/>
+                    <DataGridTextColumn x:Name="DateToUchet" Header="Дата постановки на учет" 
+                                            Binding="{Binding Дата_постановки_на_учет, StringFormat=\{0:dd.MM.yyyy\}}"
+                                            Width="200" FontSize="14"/>
+                    <DataGridTemplateColumn Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Выбрать участок" Name="SelectArea" Click="SelectArea_Click"
+                                            FontSize="14" Style="{StaticResource BtnQuit}" Width="200" 
+                                            Foreground="White"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+
+        <Frame Grid.RowSpan="2" x:Name="SlArea" NavigationUIVisibility="Hidden"/>
+
+    </Grid>
+</Page>

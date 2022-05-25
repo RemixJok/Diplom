@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -78,7 +79,7 @@ namespace Diplom.Окна
         // Простые кнопки
         private void MyArea_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить ваши данные на нашу почту," +
+            /*MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить ваши данные на нашу почту," +
                 "пожалуйста посмотрите инструкцию и добавьте пароль. Нажмите 'ОК' и подождите пока откроется браузер с инструкцией.", "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
             ChromeOptions options = new ChromeOptions();
@@ -88,11 +89,9 @@ namespace Diplom.Окна
 
             IWebDriver vk = new ChromeDriver(driverService, new ChromeOptions());
             vk.Navigate().GoToUrl(@"https://help.mail.ru/mail/security/protection/external");
-            vk.Manage().Window.Maximize();
+            vk.Manage().Window.Maximize();*/
 
-            CreateArea createArea = new CreateArea(UserName.Text);
-            createArea.Show();
-            Close();
+            FrameNPABP.Navigate(new Страницы.В_UserWindow.CreateArea());
         }
 
         private void EditInfo_Click(object sender, RoutedEventArgs e)
@@ -133,17 +132,13 @@ namespace Diplom.Окна
             Close();
         }
 
-        // Открытие браузера и переход на страницу
+        // Открытие инструкции пользователя
         private void DownlInstr_Click(object sender, RoutedEventArgs e)
         {
-            ChromeOptions options = new ChromeOptions();
-            options.PageLoadStrategy = PageLoadStrategy.Normal;
-            var driverService = ChromeDriverService.CreateDefaultService();
-            driverService.HideCommandPromptWindow = true;
-
-            IWebDriver vk = new ChromeDriver(driverService, new ChromeOptions());
-            vk.Navigate().GoToUrl(@"https://fareast.parma.tech/storage/npa-doc/file_11.pdf");
-            vk.Manage().Window.Maximize();
+            Process wordProcess = new Process();
+            wordProcess.StartInfo.FileName = @"C:\Users\cepel\Desktop\UserInstruction.pdf";
+            wordProcess.StartInfo.UseShellExecute = true;
+            wordProcess.Start();
         }
     }
 }

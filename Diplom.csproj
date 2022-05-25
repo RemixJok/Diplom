@@ -177,9 +177,6 @@
     <Compile Include="Заявки.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Окна\CreateArea.xaml.cs">
-      <DependentUpon>CreateArea.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Окна\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -189,14 +186,8 @@
     <Compile Include="Окна\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Окна\SelectArea.xaml.cs">
-      <DependentUpon>SelectArea.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Окна\UserPageStart.xaml.cs">
       <DependentUpon>UserPageStart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Окна\WhenAreaSelected.xaml.cs">
-      <DependentUpon>WhenAreaSelected.xaml</DependentUpon>
     </Compile>
     <Compile Include="Пользователи.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -225,8 +216,17 @@
     <Compile Include="Страницы\В MainWindow\Slide9.xaml.cs">
       <DependentUpon>Slide9.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Страницы\В UserWindow\CreateArea.xaml.cs">
+      <DependentUpon>CreateArea.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Страницы\В UserWindow\FAQ.xaml.cs">
       <DependentUpon>FAQ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Страницы\В UserWindow\SelectArea.xaml.cs">
+      <DependentUpon>SelectArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Страницы\В UserWindow\WhenAreaSelected.xaml.cs">
+      <DependentUpon>WhenAreaSelected.xaml</DependentUpon>
     </Compile>
     <Compile Include="Страницы\Общие\ChangeUserInfo.xaml.cs">
       <DependentUpon>ChangeUserInfo.xaml</DependentUpon>
@@ -237,10 +237,6 @@
     <Compile Include="Участки.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Page Include="Окна\CreateArea.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Окна\LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -265,15 +261,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Окна\SelectArea.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Окна\UserPageStart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Окна\WhenAreaSelected.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -309,7 +297,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Страницы\В UserWindow\CreateArea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Страницы\В UserWindow\FAQ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Страницы\В UserWindow\SelectArea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Страницы\В UserWindow\WhenAreaSelected.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -348,6 +348,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Documents\FedZakon.pdf" />
+    <None Include="Resources\Documents\UserInstruction.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

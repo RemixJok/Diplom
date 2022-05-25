@@ -11,7 +11,6 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="115"/>
         </Grid.RowDefinitions>
 
         <Border BorderThickness="0.5" BorderBrush="#333" Panel.ZIndex="-2" Background="White">
@@ -34,24 +33,6 @@
                 </StackPanel>
             </Grid>
         </ScrollViewer>
-
-        <Grid Grid.Row="3">
-            <TextBlock Text="© 2022 Министерство Российской Федерации по развитию Дальнего Востока и Арктики" 
-                               FontSize="14" FontFamily="Verdana" HorizontalAlignment="Left" 
-                               VerticalAlignment="Center" Margin="300,0,0,0"/>
-
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" 
-                                HorizontalAlignment="Right" Margin="0,0,300,0">
-                <Button Width="55" Name="VK" Click="VK_Click" Cursor="Hand" 
-                                Style="{StaticResource VKYouTube}">
-                    <Image Source="/Resources/MainWindow/Grid1/VK2.png"/>
-                </Button>
-                <Button Width="55" Name="Youtube" Click="Youtube_Click" Cursor="Hand" 
-                                Style="{StaticResource VKYouTube}">
-                    <Image Source="/Resources/MainWindow/Grid1/youtube2.png"/>
-                </Button>
-            </StackPanel>
-        </Grid>
 
         <Frame Grid.RowSpan="4" Name="FrameNPA" NavigationUIVisibility="Hidden"/>
     </Grid>

@@ -25,7 +25,7 @@ namespace Diplom.Окна
             var errorBuilder = new StringBuilder();
 
             if (txtBoxPassword.Password.Length < 5)
-                errorBuilder.AppendLine("Поле 'Пароль' не может содержать меньше 5 символов!");
+                errorBuilder.AppendLine("Поле 'Пароль' не может содержать меньше 15 символов!");
 
             return errorBuilder.ToString();
         }
