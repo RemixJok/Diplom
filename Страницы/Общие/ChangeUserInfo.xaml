@@ -12,9 +12,8 @@
         <Border VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="0.5"/>
         <TextBlock Text="Изменение информации" HorizontalAlignment="Center" VerticalAlignment="Top"
                    FontSize="24" FontWeight="Bold" Margin="0,20,0,0"/>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="300" Margin="450,80,0,220">
-            <TextBlock Text="Логин" FontSize="20" Margin="0,0,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="Пароль" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Width="300" Margin="450,80,0,220">
             <TextBlock Text="ФИО" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
             <TextBlock Text="Пол" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
             <TextBlock Text="Дата рождения" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
@@ -25,7 +24,8 @@
             <TextBlock Text="Мобильный телефон" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="300" Height="250" Margin="450,680,0,0">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Width="300" Margin="450,580,0,0">
             <TextBlock Text="Адрес электронной почты" FontSize="20" Margin="0,0,30,0" Height="30" 
                        HorizontalAlignment="Right"/>
             <TextBlock Text="Почтовый адрес" FontSize="20" Margin="0,30,30,0" Height="30" 
@@ -34,9 +34,8 @@
                        HorizontalAlignment="Right"/>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="500" Margin="50,80,0,220">
-            <TextBox Name="Login" Height="30" FontSize="20"/>
-            <PasswordBox Name="Password" Height="30" FontSize="20" Margin="0,30,0,0"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Width="500" Margin="50,80,0,220">
             <TextBox Name="FIO" Height="30" FontSize="20" Margin="0,30,0,0"/>
             <ComboBox Name="Pol" Height="30" FontSize="20" Margin="0,30,0,0">
                 <ComboBoxItem Content="Мужской"/>
@@ -53,15 +52,15 @@
                      PreviewTextInput="Phone_PreviewTextInput"/>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="500" Margin="50,680,0,45">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Width="500" Margin="50,580,0,45">
             <TextBox Name="Email" Height="30" FontSize="20"/>
             <TextBox Name="MailAddress" Height="30" FontSize="20" Margin="0,30,0,0"/>
             <TextBox Name="RegAddress" Height="30" FontSize="20" Margin="0,30,0,0"/>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="500" Margin="0,80,100,0">
-            <TextBlock Text="Логин не меньше 5 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="Пароль не меньше 8 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top"
+                    Width="500" Margin="0,110,100,0">
             <TextBlock Text="ФИО не меньше 20 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
             <TextBlock Margin="0,0,0,30" Height="30"/>
             <TextBlock Text="Дату указывать через «точку» Пример 01.01.2000" FontSize="18" Margin="0,0,0,30" Height="30"/>
