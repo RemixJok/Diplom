@@ -96,7 +96,7 @@ namespace Diplom.Окна
 
         private void EditInfo_Click(object sender, RoutedEventArgs e)
         {
-            FrameNPABP.Navigate(new Страницы.Общие.ChangeUserInfo((sender as Button).DataContext as Пользователи));
+            FrameNPABP.Navigate(new Страницы.Общие.ChangeUserInfo(DataUser.User)); //(sender as Button).DataContext as Пользователи) - задумка хорошая, только у кнопки нет информации о пользователе
         }
 
         private void DeleteInfo_Click(object sender, RoutedEventArgs e)

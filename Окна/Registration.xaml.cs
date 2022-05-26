@@ -37,6 +37,7 @@ namespace Diplom.Окна
                 //  Добавление данных в БД
                 var userInfo = new Пользователи()
                 {
+                    //ID пользователя не автоинкрементируется, судя по скрипту БД. можно считать через var count = DB.diplomEntities.Пользователи.Count() и выдавать новый ID. Но лучше поправить скрипт БД
                     Логин = Login.Text.Trim().ToLower(),
                     Пароль = Password.Password.Trim(),
                     ФИО = FIO.Text.Trim(),
@@ -95,7 +96,15 @@ namespace Diplom.Окна
             if (Birthday.Text.Length < 10)
                 errorBuilder.AppendLine("Поле 'Дата рождения' не может содержать меньше 10 символов!");
 
-            DateTime dateBirthday = DateTime.ParseExact(Birthday.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            DateTime dateBirthday = new DateTime(1959, 1, 1); // заполнил ради продвижения по коду. лучше вынети в отдельный метод
+            try
+            {
+                dateBirthday = DateTime.ParseExact(Birthday.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            }
+            catch (Exception ex)
+            {
+                //если требуется ошибку показать
+            }
             if (dateBirthday < new DateTime(1960, 1, 1) || new DateTime(2002, 12, 31) < dateBirthday)
                errorBuilder.AppendLine("Дата рождения не может быть меньше чем 01.01.1960 или больше чем 31.12.2002");
 
@@ -131,7 +140,7 @@ namespace Diplom.Окна
             if (Email.Text.Length < 14)
                 errorBuilder.AppendLine("Поле 'Адрес электронной почты' не может быть меньше 14 символов!");
 
-            if (Email.Text.Contains(value: "@mail.ru"))
+            if (!Email.Text.Contains(value: "@mail.ru")) //если НЕ содержит
                 errorBuilder.AppendLine("Поле 'Адрес электронной почты' не содержит '@mail.ru'");
 
             if (MailAddress.Text.Length < 30)
