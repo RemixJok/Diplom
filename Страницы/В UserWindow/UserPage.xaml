@@ -1,0 +1,170 @@
+﻿<Page x:Class="Diplom.Страницы.В_UserWindow.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Diplom.Страницы.В_UserWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="780" d:DesignWidth="1920"
+      Title="UserPage">
+
+    <Grid>
+        <ScrollViewer Grid.Row="2">
+            <Grid Background="#FFEEF3F6">
+                <Border Background="White" VerticalAlignment="Top" Margin="50,20,50,0" Height="57">
+                    <TextBlock Text="Основная информация" FontSize="16" VerticalAlignment="Center" 
+                                   FontWeight="Bold" Margin="20,0,0,0"/>
+                </Border>
+
+                <Button Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            Margin="300,38.5,0,0" Cursor="Hand" Click="Button_Click">
+                    <Image Source="/Resources/UserPageStart/MoreInfo.png"/>
+                </Button>
+
+                <Grid Name="MoreInfo" Height="95" Width="1160" Margin="300,80,0,0" 
+                          HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFE2A1" 
+                          Visibility="Hidden" Panel.ZIndex="2">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="5" ShadowDepth="0"/>
+                    </Grid.Effect>
+                    <TextBlock Text="Данная информация берется из базы данных, данные в которую вносятся после регистрации. Для редактирования информации нажмите на кнопку «Редактирования» (2 кнопка) (ПОКА В РАЗРАБОТКЕ), для удаления на кнопку «Удаления» (3 кнопка)."
+                                   FontSize="14" VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
+                                   Margin="20,0,20,0" Foreground="#4D4D4D"/>
+                </Grid>
+
+                <Button Name="EditInfo" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                            Margin="350,38.5,0,0" Cursor="Hand" Click="EditInfo_Click" IsEnabled="True">
+                    <Image Source="/Resources/UserPageStart/EditInfo.png"/>
+                </Button>
+
+                <Button Name="DeleteInfo" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                            Margin="400,38.5,0,0" Cursor="Hand" Click="DeleteInfo_Click" IsEnabled="True">
+                    <Image Source="/Resources/UserPageStart/Trash.png"/>
+                </Button>
+
+                <StackPanel Orientation="Vertical" Margin="50,80,0,210" Width="355" HorizontalAlignment="Left">
+                    <Border Background="White" VerticalAlignment="Top" Height="65">
+                        <TextBlock Text="ФИО" FontSize="14" Background="White" VerticalAlignment="Center"
+                                       Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="Пол" FontSize="14" Background="White" VerticalAlignment="Center"
+                                       Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="Дата рождения" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="Гражданство" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center"
+                                       Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="Документ, удостоверяющий личность" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="СНИЛС" FontSize="14" Background="White" VerticalAlignment="Center"
+                                       Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="ИНН" FontSize="14" Background="White" VerticalAlignment="Center"
+                                       Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+                </StackPanel>
+
+                <Border Background="White" VerticalAlignment="Top" Height="57" Margin="50,556,50,0">
+                    <TextBlock Text="Контактная информация" FontSize="16" VerticalAlignment="Center" 
+                                   FontWeight="Bold" Margin="20,0,0,0"/>
+                </Border>
+                <StackPanel Orientation="Vertical" Margin="50,613,0,0" Width="355" HorizontalAlignment="Left">
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="Мобильный телефон" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="Адрес электронной почты" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Text="Почтовый адрес" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,20">
+                        <TextBlock Text="Адрес регистрации" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center" Margin="40,0,0,0" Foreground="#6F8EA1"/>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="404,80,50,0">
+                    <Border Background="White" VerticalAlignment="Top" Height="65">
+                        <TextBlock Name="FIO" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="Pol" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="Birthday" FontSize="14" 
+                                       Background="White" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="Nationality" FontSize="14" 
+                                       Background="White" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="Pasport" FontSize="14" Background="White" VerticalAlignment="Center"
+                                       Width="640" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="SNILS" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="INN" FontSize="14" Background="White" 
+                                       VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Height="57" Margin="0,3,0,0"/>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="Phone" FontSize="14" 
+                                       Background="White" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="Email" FontSize="14" 
+                                       Background="White" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="MailAdress" FontSize="14" Background="White" VerticalAlignment="Center" 
+                                       Width="640" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow"/>
+                    </Border>
+
+                    <Border Background="White" VerticalAlignment="Top" Height="65" Margin="0,3,0,0">
+                        <TextBlock Name="RegAdress" FontSize="14" Background="White" VerticalAlignment="Center" 
+                                       Width="640" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

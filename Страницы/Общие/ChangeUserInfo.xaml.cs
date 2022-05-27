@@ -22,6 +22,28 @@ namespace Diplom.Страницы.Общие
                 _currentUser = selectedUser;
 
             DataContext = _currentUser;
+            SetPol(_currentUser.Пол);
+            SetBirthday(_currentUser.Дата_рождения);
+        }
+
+        /// <summary>
+        /// Т.к. пол пользователя храним, как строку, то при открытии окна надо задать выбранный элемент из выпадающего списка
+        /// </summary>
+        /// <param name="userPol"></param>
+        private void SetPol(string userPol)
+        {
+            foreach (ComboBoxItem item in Pol.Items)
+            {
+                if (item.Content.ToString().ToLower().Equals(userPol.ToLower()))
+                {
+                    Pol.SelectedItem = item;
+                }
+            }
+        }
+
+        private void SetBirthday(DateTime birthday)
+        {
+            Birthday.Text = birthday.ToString("dd.MM.yyyy");
         }
 
         // Кнопка сохранения введенной информации при регистрации и проверка на ошибки
@@ -44,7 +66,7 @@ namespace Diplom.Страницы.Общие
                 && Nationality.Text.Contains(value: "Эстония".ToLower()))
                 errorBuilder.AppendLine("В поле 'Гражданство' указано не разрешенное гражданство");
 
-            if (_currentUser.Гражданство.Length < 30)
+            if (_currentUser.Паспорт.Length < 30)
                 errorBuilder.AppendLine("Поле 'Данные паспорта' не может быть меньше 30 символов!");
 
             if (SNILS.Text.Length < 11)
@@ -59,7 +81,7 @@ namespace Diplom.Страницы.Общие
             if (_currentUser.Адрес_электронной_почты.Length < 14)
                 errorBuilder.AppendLine("Поле 'Адрес электронной почты' не может быть меньше 14 символов!");
 
-            if (Email.Text.Contains(value: "@mail.ru"))
+            if (!Email.Text.Contains(value: "@mail.ru"))
                 errorBuilder.AppendLine("Поле 'Адрес электронной почты' не содержит '@mail.ru'");
 
             if (_currentUser.Почтовый_адрес.Length < 30)
@@ -74,8 +96,8 @@ namespace Diplom.Страницы.Общие
                 return;
             }
 
-            //if (_currentUser.ID_Пользователя == 0)
-            //    DB.diplomEntities.Пользователи.Add(_currentUser);
+            if (_currentUser.ID_Пользователя == 0)
+               DB.diplomEntities.Пользователи.Add(_currentUser);
 
             try
             {
@@ -86,6 +108,10 @@ namespace Diplom.Страницы.Общие
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+
+            Окна.UserPageStart userPage = new Окна.UserPageStart(DataUser.User);
+            userPage.Show();
+            Application.Current.MainWindow.Close();
         }
 
         // Ограничение на вписание только цифр

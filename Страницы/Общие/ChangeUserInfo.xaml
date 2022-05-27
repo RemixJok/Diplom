@@ -6,79 +6,269 @@
       xmlns:local="clr-namespace:Diplom.Страницы.Общие"
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="1920"
-      Title="ChangeUserInfo">
+      Title="Изменение информации">
 
     <Grid Background="White">
-        <Border VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="0.5"/>
-        <TextBlock Text="Изменение информации" HorizontalAlignment="Center" VerticalAlignment="Top"
-                   FontSize="24" FontWeight="Bold" Margin="0,20,0,0"/>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" 
-                    Width="300" Margin="450,80,0,220">
-            <TextBlock Text="ФИО" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="Пол" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="Дата рождения" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="Гражданство" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="Данные паспорта" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="СНИЛС" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="ИНН" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-            <TextBlock Text="Мобильный телефон" FontSize="20" Margin="0,30,30,0" Height="30" HorizontalAlignment="Right"/>
-        </StackPanel>
+        <Border
+                VerticalAlignment="Top"
+                BorderBrush="LightGray"
+                BorderThickness="0.5"/>
+            <TextBlock
+                Margin="0,10,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="24"
+                FontWeight="Bold"
+                Text="Изменение информации"/>
+            <StackPanel
+                Width="300"
+                Margin="450,-20,0,0"
+                HorizontalAlignment="Left"
+                Orientation="Vertical"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Пароль"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,5"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="ФИО"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Пол"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Дата рождения"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Гражданство"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Данные паспорта"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="СНИЛС"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="ИНН"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Мобильный телефон"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Адрес электронной почты"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Почтовый адрес"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,30,30,0"
+                    HorizontalAlignment="Right"
+                    FontSize="20"
+                    Text="Адрес регистрации"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"
-                    Width="300" Margin="450,580,0,0">
-            <TextBlock Text="Адрес электронной почты" FontSize="20" Margin="0,0,30,0" Height="30" 
-                       HorizontalAlignment="Right"/>
-            <TextBlock Text="Почтовый адрес" FontSize="20" Margin="0,30,30,0" Height="30" 
-                       HorizontalAlignment="Right"/>
-            <TextBlock Text="Адрес регистрации" FontSize="20" Margin="0,30,30,0" Height="30" 
-                       HorizontalAlignment="Right"/>
-        </StackPanel>
+            <StackPanel
+                Width="500"
+                Margin="735,-20,0,0"
+                HorizontalAlignment="Left"
+                Orientation="Vertical"
+                VerticalAlignment="Center">
+                <PasswordBox
+                    Name="Password"
+                    Height="30"
+                    FontSize="20"
+                    MaxLength="100"/>
+                <TextBox
+                    Name="FIO"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="100"
+                    Text="{Binding Path=ФИО}"/>
+                <ComboBox
+                    Name="Pol"
+                    Height="35"
+                    Margin="0,30,0,0"
+                    FontSize="20">
+                    <ComboBoxItem Content="Мужской"/>
+                    <ComboBoxItem Content="Женский"/>
+                </ComboBox>
+                <TextBox
+                    Name="Birthday"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="10"/>
+                <TextBox
+                    Name="Nationality"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="100"
+                    Text="{Binding Path=Гражданство}"/>
+                <TextBox
+                    Name="Pasport"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="100"
+                    Text="{Binding Path=Паспорт}"/>
+                <TextBox
+                    Name="SNILS"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="11"
+                    PreviewTextInput="SNILS_PreviewTextInput"
+                    Text="{Binding Path=СНИЛС}"/>
+                <TextBox
+                    Name="INN"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="12"
+                    PreviewTextInput="INN_PreviewTextInput"
+                    Text="{Binding Path=ИНН}"/>
+                <TextBox
+                    Name="Phone"
+                    Height="30"
+                    Margin="0,30,0,30"
+                    FontSize="20"
+                    MaxLength="16"
+                    PreviewTextInput="Phone_PreviewTextInput"
+                    Text="{Binding Path=Мобильный_телефон}"/>
+                <TextBox
+                    Name="Email"
+                    Height="30"
+                    FontSize="20"
+                    MaxLength="100"
+                    Text="{Binding Path=Адрес_электронной_почты}"/>
+                <TextBox
+                    Name="MailAddress"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="100"
+                    Text="{Binding Path=Почтовый_адрес}"/>
+                <TextBox
+                    Name="RegAddress"
+                    Height="30"
+                    Margin="0,30,0,0"
+                    FontSize="20"
+                    MaxLength="100"
+                    Text="{Binding Path=Адрес_регистрации}"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
-                    Width="500" Margin="50,80,0,220">
-            <TextBox Name="FIO" Height="30" FontSize="20" Margin="0,30,0,0"/>
-            <ComboBox Name="Pol" Height="30" FontSize="20" Margin="0,30,0,0">
-                <ComboBoxItem Content="Мужской"/>
-                <ComboBoxItem Content="Женский"/>
-            </ComboBox>
-            <TextBox Name="Birthday" Height="30" FontSize="20" Margin="0,30,0,0" MaxLength="10"/>
-            <TextBox Name="Nationality" Height="30" FontSize="20" Margin="0,30,0,0"/>
-            <TextBox Name="Pasport" Height="30" FontSize="20" Margin="0,30,0,0"/>
-            <TextBox Name="SNILS" Height="30" FontSize="20" Margin="0,30,0,0" MaxLength="11"
-                     PreviewTextInput="SNILS_PreviewTextInput"/>
-            <TextBox Name="INN" Height="30" FontSize="20" Margin="0,30,0,0" MaxLength="12" 
-                     PreviewTextInput="INN_PreviewTextInput"/>
-            <TextBox Name="Phone" Height="30" FontSize="20" Margin="0,30,0,0" MaxLength="16" 
-                     PreviewTextInput="Phone_PreviewTextInput"/>
-        </StackPanel>
+            <StackPanel
+                Width="500"
+                Margin="0,50,100,0"
+                HorizontalAlignment="Right"
+                Orientation="Vertical"
+                VerticalAlignment="Top">
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="Пароль не меньше 8 символов"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="ФИО не меньше 20 символов"/>
+                <TextBlock 
+                    Height="30" 
+                    Margin="0,0,0,30"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="Дату указывать через «точку» Пример 01.01.2000"/>
+                <TextBlock
+                    Height="50"
+                    Margin="0,0,0,10"
+                    FontSize="18"
+                    Text="Гражданство только «Россия», «Украина», «Казахстан», «Беларусь», «Литва», «Латвия», «Эстония»"
+                    TextWrapping="Wrap"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="В этом поле укажите: серию и номер, когда и кем выдан"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="СНИЛС не меньше 11 символов"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="ИНН не меньше 12 символов"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="Мобильный телефон не меньше 11 символов"/>
+                <TextBlock
+                    Height="50"
+                    Margin="0,0,0,10"
+                    FontSize="18"
+                    Text="Адрес электронной почты не меньше 14 символов и только @mail.ru"
+                    TextWrapping="Wrap"/>
+                <TextBlock
+                    Height="30"
+                    Margin="0,0,0,30"
+                    FontSize="18"
+                    Text="Почтовый адрес не меньше 30 символов"/>
+                <TextBlock
+                    Height="30"
+                    FontSize="18"
+                    Text="Адрес регистрации не меньше 30 символов"/>
+            </StackPanel>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top"
-                    Width="500" Margin="50,580,0,45">
-            <TextBox Name="Email" Height="30" FontSize="20"/>
-            <TextBox Name="MailAddress" Height="30" FontSize="20" Margin="0,30,0,0"/>
-            <TextBox Name="RegAddress" Height="30" FontSize="20" Margin="0,30,0,0"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top"
-                    Width="500" Margin="0,110,100,0">
-            <TextBlock Text="ФИО не меньше 20 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="Дату указывать через «точку» Пример 01.01.2000" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="Гражданство только «Россия», «Украина», «Казахстан», «Беларусь», «Литва», «Латвия», «Эстония»" 
-                       TextWrapping="Wrap" FontSize="18" Margin="0,0,0,10" Height="50"/>
-            <TextBlock Text="В этом поле укажите: серию и номер, когда и кем выдан" 
-                       FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="СНИЛС не меньше 11 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="ИНН не меньше 12 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="Мобильный телефон не меньше 11 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="Адрес электронной почты не меньше 14 символов и только @mail.ru" FontSize="18" 
-                       TextWrapping="Wrap" Margin="0,0,0,10" Height="50"/>
-            <TextBlock Text="Почтовый адрес не меньше 30 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-            <TextBlock Text="Адрес регистрации не меньше 30 символов" FontSize="18" Margin="0,0,0,30" Height="30"/>
-        </StackPanel>
-
-        <Button Name="BtnSave" Content="Сохранить" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                FontSize="24" Margin="0,0,0,10" Click="BtnSave_Click" Foreground="White" 
-                Style="{StaticResource BtnQuit}" Height="50"/>
+        <Button
+                Name="BtnSave"
+                Height="50"
+                Margin="0,0,0,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Click="BtnSave_Click"
+                Content="Сохранить"
+                FontSize="24"
+                Foreground="White"
+                Style="{StaticResource BtnQuit}"/>
     </Grid>
 </Page>

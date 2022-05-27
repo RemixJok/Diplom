@@ -79,7 +79,7 @@ namespace Diplom.Окна
         // Простые кнопки
         private void MyArea_Click(object sender, RoutedEventArgs e)
         {
-            /*MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить ваши данные на нашу почту," +
+            MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить ваши данные на нашу почту," +
                 "пожалуйста посмотрите инструкцию и добавьте пароль. Нажмите 'ОК' и подождите пока откроется браузер с инструкцией.", "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
             ChromeOptions options = new ChromeOptions();
@@ -89,14 +89,14 @@ namespace Diplom.Окна
 
             IWebDriver vk = new ChromeDriver(driverService, new ChromeOptions());
             vk.Navigate().GoToUrl(@"https://help.mail.ru/mail/security/protection/external");
-            vk.Manage().Window.Maximize();*/
+            vk.Manage().Window.Maximize();
 
             FrameNPABP.Navigate(new Страницы.В_UserWindow.CreateArea());
         }
 
         private void EditInfo_Click(object sender, RoutedEventArgs e)
         {
-            FrameNPABP.Navigate(new Страницы.Общие.ChangeUserInfo((sender as Button).DataContext as Пользователи));
+            FrameNPABP.Navigate(new Страницы.Общие.ChangeUserInfo(DataUser.User));
         }
 
         private void DeleteInfo_Click(object sender, RoutedEventArgs e)
