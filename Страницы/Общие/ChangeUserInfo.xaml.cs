@@ -58,6 +58,11 @@ namespace Diplom.Страницы.Общие
                 errorBuilder.AppendLine("Поле 'Дата рождения' не может содержать меньше 10 символов!");
 
             DateTime dateBirthday = DateTime.ParseExact(Birthday.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
+            {
+                _currentUser.Дата_рождения = dateBirthday;
+                _currentUser.Пол = Pol.Text;
+                _currentUser.Пароль = Password.Password;
+            }
             if (dateBirthday < new DateTime(1960, 1, 1) || new DateTime(2002, 12, 31) < dateBirthday)
                 errorBuilder.AppendLine("Дата рождения не может быть меньше чем 01.01.1960 или больше чем 31.12.2002");
 
@@ -109,9 +114,8 @@ namespace Diplom.Страницы.Общие
                 MessageBox.Show(ex.Message.ToString());
             }
 
-            Окна.UserPageStart userPage = new Окна.UserPageStart(DataUser.User);
-            userPage.Show();
-            Application.Current.MainWindow.Close();
+            MessageBox.Show("Чтобы увидеть изменения перейдите на свою страницу!",
+                "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         // Ограничение на вписание только цифр

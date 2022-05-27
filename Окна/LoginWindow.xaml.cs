@@ -25,7 +25,7 @@ namespace Diplom.Окна
 
                 if (DataUser.User == null)
                 {
-                    MessageBox.Show("Такого пользователя нет!", "Ошибка при авторизации",
+                    MessageBox.Show("Неверный логин или пароль!", "Ошибка при авторизации",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
