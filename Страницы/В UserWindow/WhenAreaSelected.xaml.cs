@@ -50,7 +50,7 @@ namespace Diplom.Страницы.В_UserWindow
             var idUser = DataUser.User.ID_Пользователя.ToString();
             var name = DataUser.User.ФИО.ToString();
             var pol = DataUser.User.Пол.ToString();
-            var birthday = DataUser.User.Дата_рождения.ToString();
+            var birthday = DataUser.User.Дата_рождения.ToString("dd.MM.yyyy");
             var nationality = DataUser.User.Гражданство.ToString();
             var pasport = DataUser.User.Паспорт.ToString();
             var snils = DataUser.User.СНИЛС.ToString();
