@@ -44,7 +44,7 @@ namespace Diplom.Страницы.В_UserWindow
             MessageBox.Show("Подождите несоколько секунд выполняется отправка данных, по завершении отправки Вы увидите уведомление об успешной отправке",
                 "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // Переменные для импорта в ворд
+            // Переменные, в которые заносятся данные пользователя для импорта в ворд
             var idUser = DataUser.User.ID_Пользователя.ToString();
             var name = DataUser.User.ФИО.ToString();
             var pol = DataUser.User.Пол.ToString();
@@ -82,7 +82,7 @@ namespace Diplom.Страницы.В_UserWindow
             // Добавление таблицы
             Word.Paragraph tableParagraph = document.Paragraphs.Add();
             Word.Range tableRange = tableParagraph.Range;
-            Word.Table userInfoTable = document.Tables.Add(tableRange, 18, 2);
+            Word.Table userInfoTable = document.Tables.Add(tableRange, 18, 2); // Сколько строк и колонок
             userInfoTable.Borders.InsideLineStyle = userInfoTable.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
             userInfoTable.Range.Cells.VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
@@ -183,6 +183,7 @@ namespace Diplom.Страницы.В_UserWindow
             document.Close();
             application.Quit();
 
+            // Протоколы, на всякий случай
             ServicePointManager.SecurityProtocol =
                 SecurityProtocolType.Tls12
                 | SecurityProtocolType.Ssl3
@@ -198,6 +199,7 @@ namespace Diplom.Страницы.В_UserWindow
                 UserName = userLogin,
             }; // Логин и пароль от почты пользователя
 
+            // Порт, хост и включение ssl протокола для работы отправки
             client.Port = 2525;
             client.Host = "smtp.mail.ru";
             client.EnableSsl = true;
@@ -205,15 +207,15 @@ namespace Diplom.Страницы.В_UserWindow
             MailMessage message = new MailMessage();
             message.From = new MailAddress(DataUser.User.Адрес_электронной_почты.ToString(), DataUser.User.ФИО); // От кого
             message.To.Add(new MailAddress("cepelev2001@mail.ru")); // Кому
-            message.Subject = $"Заявление на участок от пользователя {name}";
-            message.BodyEncoding = System.Text.Encoding.UTF8;
-            message.Attachments.Add(new Attachment(@"C:\Users\cepel\Desktop\Заявление.docx"));
+            message.Subject = $"Заявление на участок от пользователя {name}"; // Заголовок письма
+            message.BodyEncoding = System.Text.Encoding.UTF8; // Кодировка
+            message.Attachments.Add(new Attachment(@"C:\Users\cepel\Desktop\Заявление.docx")); // Доьбавление документа в письмо
 
             client.Send(message);
             client.Dispose();
 
             MessageBox.Show("Заявление на участок было направлено на почту для рассмотрения, после его рассмотрения вам позвонят и отправят уведомление на почту, которую вы оставили при регистрации.",
-                "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
             /*// Кнопка удаления пользователя
             DiplomEntities deleteUser = new DiplomEntities();
