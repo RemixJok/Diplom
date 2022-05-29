@@ -29,6 +29,7 @@ namespace Diplom.Страницы.В_UserWindow
             DGridArea.ItemsSource = DB.diplomEntities.Участки.ToList();
         }
 
+        // Кнопка "Выбрать участок"
         private void SelectArea_Click(object sender, RoutedEventArgs e)
         {
             Участки path = DGridArea.SelectedItem as Участки;

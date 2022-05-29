@@ -27,11 +27,13 @@ namespace Diplom.Страницы.В_UserWindow
             ComboPlanActiv.ItemsSource = DB.diplomEntities.Деятельность_на_ЗУ.ToList();
         }
 
+        // Кнопка "Выбрать другой участок"
         private void ChoseArea_Click(object sender, RoutedEventArgs e)
         {
             WhenAreaSl.Navigate(new SelectArea());
         }
 
+        // Кнопка "Отправить заявление"
         private void SendApplic_Click(object sender, RoutedEventArgs e)
         {
             MailDataWindow mailData = new MailDataWindow();

@@ -18,7 +18,7 @@ namespace Diplom
             Link.ChoseArea = ChoseArea;
         }
 
-        // Простые кнопки
+        // Кнопка "Войти"
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             Окна.LoginWindow loginWindow = new Окна.LoginWindow();
@@ -26,6 +26,7 @@ namespace Diplom
             Close();
         }
 
+        // Кнопка "Зарегистрироваться"
         private void Reg_Click(object sender, RoutedEventArgs e)
         {
             Окна.Registration registration = new Окна.Registration();

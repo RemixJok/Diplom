@@ -12,6 +12,7 @@ namespace Diplom.Окна
     /// </summary>
     public partial class Registration : Window
     {
+        // Приватные поля для проверки на схожесть информации в БД
         private Пользователи _currentЛогин = null;
         private Пользователи _currentСНИЛС = null;
         private Пользователи _currentИНН = null;
@@ -55,7 +56,7 @@ namespace Diplom.Окна
                 DB.diplomEntities.SaveChanges();
 
                 MessageBox.Show("Пользователь успешно добавлен!",
-                    "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 LoginWindow loginWindow = new LoginWindow();
                 loginWindow.Show();
@@ -66,7 +67,7 @@ namespace Diplom.Окна
         // Кнопка назад
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-            Окна.LoginWindow loginWindow = new Окна.LoginWindow();
+            LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
             Close();
         }

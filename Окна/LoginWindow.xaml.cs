@@ -15,7 +15,7 @@ namespace Diplom.Окна
             DB.diplomEntities = new DiplomEntities();
         }
 
-        // Кнопка для входа
+        // Кнопка "Войти"
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -43,7 +43,7 @@ namespace Diplom.Окна
             }
         }
 
-        // Кнопка регистрации
+        // Кнопка "Зарегистрироваться"
         private void BtnGoToReg_Click(object sender, RoutedEventArgs e)
         {
             Registration registration = new Registration();

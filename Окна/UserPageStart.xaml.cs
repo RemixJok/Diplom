@@ -76,10 +76,12 @@ namespace Diplom.Окна
             FrameNPABP.Navigate(new Страницы.В_UserPage.FAQ());
         }
 
-        private void MyArea_Click(object sender, RoutedEventArgs e)
+        // Кнопка для перехода на страницу выбора участка и открытие браузера
+        private void ChoseArea_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить Ваши данные на нашу почту, " +
-                "пожалуйста посмотрите инструкцию и добавьте пароль. Нажмите 'ОК' и подождите пока откроется браузер с инструкцией.", "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
+                "пожалуйста посмотрите инструкцию и добавьте пароль. Нажмите 'ОК' и подождите пока откроется браузер с инструкцией.", 
+                "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
             ChromeOptions options = new ChromeOptions();
             options.PageLoadStrategy = PageLoadStrategy.Normal;
@@ -93,17 +95,19 @@ namespace Diplom.Окна
             FrameNPABP.Navigate(new Страницы.В_UserWindow.SelectArea());
         }
 
+        // Кнопка изменения информации о пользователе
         private void EditInfo_Click(object sender, RoutedEventArgs e)
         {
             FrameNPABP.Navigate(new Страницы.Общие.ChangeUserInfo(DataUser.User));
         }
 
+        // Кнопка удаления пользователя
         private void DeleteInfo_Click(object sender, RoutedEventArgs e)
         {
-            // Показ сообщения перед удалением
             MessageBoxResult result = MessageBox.Show($"Вы точно хотите удалить аккаунт пользователя {UserName.Text}?",
                 "Уведомление!", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+            // Если да, то пользователь удаляется, иначе ничего
             if (result == MessageBoxResult.Yes)
             {
                 DiplomEntities deleteUser = new DiplomEntities();
@@ -123,6 +127,7 @@ namespace Diplom.Окна
             }
         }
 
+        // Кнопка выхода
         private void Quit_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
