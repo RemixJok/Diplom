@@ -114,7 +114,7 @@ namespace Diplom.Страницы.Общие
                 MessageBox.Show(ex.Message.ToString());
             }
 
-            MessageBox.Show("Чтобы увидеть изменения перейдите на свою страницу!",
+            MessageBox.Show("Чтобы увидеть изменения перейдите в свой профиль!",
                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 

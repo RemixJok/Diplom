@@ -76,10 +76,9 @@ namespace Diplom.Окна
             FrameNPABP.Navigate(new Страницы.В_UserPage.FAQ());
         }
 
-        // Простые кнопки
         private void MyArea_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить ваши данные на нашу почту," +
+            MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить Ваши данные на нашу почту, " +
                 "пожалуйста посмотрите инструкцию и добавьте пароль. Нажмите 'ОК' и подождите пока откроется браузер с инструкцией.", "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
             ChromeOptions options = new ChromeOptions();
@@ -91,7 +90,7 @@ namespace Diplom.Окна
             vk.Navigate().GoToUrl(@"https://help.mail.ru/mail/security/protection/external");
             vk.Manage().Window.Maximize();
 
-            FrameNPABP.Navigate(new Страницы.В_UserWindow.CreateArea());
+            FrameNPABP.Navigate(new Страницы.В_UserWindow.SelectArea());
         }
 
         private void EditInfo_Click(object sender, RoutedEventArgs e)
@@ -107,7 +106,6 @@ namespace Diplom.Окна
 
             if (result == MessageBoxResult.Yes)
             {
-                // Кнопка удаления пользователя
                 DiplomEntities deleteUser = new DiplomEntities();
 
                 // Нахождение пользователя с там же id, под которым выполнен вход

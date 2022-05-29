@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Diplom.Страницы.В_UserWindow"
       mc:Ignorable="d" 
       d:DesignHeight="780" d:DesignWidth="1920"
-      Title="Создание участка">
+      Title="Создание участка"
+      WindowTitle="Создание участка">
 
     <Grid Background="#FFEEF3F6">
         <StackPanel Orientation="Vertical" Margin="50,30,50,0" VerticalAlignment="Top">

@@ -41,7 +41,8 @@ namespace Diplom.Страницы.В_UserWindow
             var userLogin = LoginAndPassMail.Login.ToString();
             var userPassword = LoginAndPassMail.Password.ToString();
 
-            MessageBox.Show("Подождите 5 секунд выполняется отправка данных");
+            MessageBox.Show("Подождите несоколько секунд выполняется отправка данных, по завершении отправки Вы увидите уведомление об успешной отправке",
+                "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
             // Переменные для импорта в ворд
             var idUser = DataUser.User.ID_Пользователя.ToString();

@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Diplom.Страницы.Общие"
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="1920"
-      Title="Изменение информации">
+      Title="Изменение информации"
+      WindowTitle="Изменение информации">
 
     <Grid Background="White">
         <Border

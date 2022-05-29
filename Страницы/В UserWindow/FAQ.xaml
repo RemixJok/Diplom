@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Diplom.Страницы.В_UserPage"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1920"
-      Title="FAQ">
+      Title="Частые вопросы"
+      WindowTitle="Частые вопросы">
 
     <Grid>
         <Grid Background="White">

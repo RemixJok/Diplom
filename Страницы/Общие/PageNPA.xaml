@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:Diplom.Страницы.Общие"
       mc:Ignorable="d" 
       d:DesignHeight="970" d:DesignWidth="1920"
-      Title="PageNPA">
+      Title="Нормативные документы"
+      WindowTitle="Нормативные документы">
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>

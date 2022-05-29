@@ -216,9 +216,6 @@
     <Compile Include="Страницы\В MainWindow\Slide9.xaml.cs">
       <DependentUpon>Slide9.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Страницы\В UserWindow\CreateArea.xaml.cs">
-      <DependentUpon>CreateArea.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Страницы\В UserWindow\FAQ.xaml.cs">
       <DependentUpon>FAQ.xaml</DependentUpon>
     </Compile>
@@ -294,10 +291,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Страницы\В MainWindow\Slide9.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Страницы\В UserWindow\CreateArea.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
