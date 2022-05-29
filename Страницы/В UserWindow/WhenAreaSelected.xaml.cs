@@ -1,10 +1,10 @@
-﻿using System.Linq;
+﻿using Diplom.Окна;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Windows;
 using System.Windows.Controls;
 using Word = Microsoft.Office.Interop.Word;
-using System.Net;
-using System.Net.Mail;
-using Diplom.Окна;
 
 namespace Diplom.Страницы.В_UserWindow
 {

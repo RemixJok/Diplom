@@ -1,13 +1,9 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
 using System.Data.Entity;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Diplom.Окна
 {
@@ -82,7 +78,7 @@ namespace Diplom.Окна
         private void ChoseArea_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Перед тем как выбирать участок, Вам необходимо создать 'Пароль для внешних приложений', чтобы наша система смогла отправить Ваши данные на нашу почту, " +
-                "пожалуйста посмотрите инструкцию и добавьте пароль. Нажмите 'ОК' и подождите пока откроется браузер с инструкцией.", 
+                "пожалуйста посмотрите инструкцию и добавьте пароль. Нажмите 'ОК' и подождите пока откроется браузер с инструкцией.",
                 "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
             ChromeOptions options = new ChromeOptions();

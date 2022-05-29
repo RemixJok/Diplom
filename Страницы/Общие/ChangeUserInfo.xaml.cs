@@ -102,7 +102,7 @@ namespace Diplom.Страницы.Общие
             }
 
             if (_currentUser.ID_Пользователя == 0)
-               DB.diplomEntities.Пользователи.Add(_currentUser);
+                DB.diplomEntities.Пользователи.Add(_currentUser);
 
             try
             {

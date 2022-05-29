@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Diplom
+﻿namespace Diplom
 {
     internal class DataAreaFromGrid
     {
-        public static Участки areaData = null; 
+        public static Участки areaData = null;
     }
 }

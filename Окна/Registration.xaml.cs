@@ -98,10 +98,10 @@ namespace Diplom.Окна
 
             DateTime dateBirthday = DateTime.ParseExact(Birthday.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture);
             if (dateBirthday < new DateTime(1960, 1, 1) || new DateTime(2002, 12, 31) < dateBirthday)
-               errorBuilder.AppendLine("Дата рождения не может быть меньше чем 01.01.1960 или больше чем 31.12.2002");
+                errorBuilder.AppendLine("Дата рождения не может быть меньше чем 01.01.1960 или больше чем 31.12.2002");
 
-            if (Nationality.Text.Contains(value: "Россия".ToLower()) && Nationality.Text.Contains(value: "Украина".ToLower()) && Nationality.Text.Contains(value: "Казахстан".ToLower()) 
-                && Nationality.Text.Contains(value: "Беларусь".ToLower()) && Nationality.Text.Contains(value: "Литва".ToLower()) && Nationality.Text.Contains(value: "Латвия".ToLower()) 
+            if (Nationality.Text.Contains(value: "Россия".ToLower()) && Nationality.Text.Contains(value: "Украина".ToLower()) && Nationality.Text.Contains(value: "Казахстан".ToLower())
+                && Nationality.Text.Contains(value: "Беларусь".ToLower()) && Nationality.Text.Contains(value: "Литва".ToLower()) && Nationality.Text.Contains(value: "Латвия".ToLower())
                 && Nationality.Text.Contains(value: "Эстония".ToLower()))
                 errorBuilder.AppendLine("В поле 'Гражданство' указано не разрешенное гражданство");
 
