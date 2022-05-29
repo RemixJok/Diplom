@@ -16,11 +16,11 @@ namespace Diplom.Страницы.Общие
             InitializeComponent();
         }
 
-        // Открытие браузера и переход на страницу
+        // Открытие документа из проекта
         private void FederZakon_Click(object sender, RoutedEventArgs e)
         {
             Process wordProcess = new Process();
-            wordProcess.StartInfo.FileName = @"C:\Users\cepel\Desktop\Diplom\Resources\Documents\FedZakon.pdf";
+            wordProcess.StartInfo.FileName = @".\Resources\Documents\FedZakon.pdf";
             wordProcess.StartInfo.UseShellExecute = true;
             wordProcess.Start();
         }

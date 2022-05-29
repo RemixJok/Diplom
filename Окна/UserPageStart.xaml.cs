@@ -3,7 +3,9 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.Data.Entity;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -139,7 +141,7 @@ namespace Diplom.Окна
         private void DownlInstr_Click(object sender, RoutedEventArgs e)
         {
             Process wordProcess = new Process();
-            wordProcess.StartInfo.FileName = @"C:\Users\cepel\Desktop\UserInstruction.pdf";
+            wordProcess.StartInfo.FileName = @".\Resources\Documents\UserInstruction.pdf";
             wordProcess.StartInfo.UseShellExecute = true;
             wordProcess.Start();
         }
