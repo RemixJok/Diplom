@@ -13,17 +13,16 @@ namespace Diplom.Страницы.В_UserWindow
         {
             InitializeComponent();
 
-            // Вывод участков в ДатаГрид
-            DGridArea.ItemsSource = DB.diplomEntities.Участки.ToList();
+            DGridArea.ItemsSource = DB.diplomEntities.Участки.ToList();      // Вывод участков в ДатаГрид
         }
 
         // Кнопка "Выбрать участок"
         private void SelectArea_Click(object sender, RoutedEventArgs e)
         {
-            Участки path = DGridArea.SelectedItem as Участки;
-            DataAreaFromGrid.areaData = DB.diplomEntities.Участки.Add(path);
+            Участки path = DGridArea.SelectedItem as Участки;                // Запись выбранного участка в переменную (path)
+            DataAreaFromGrid.areaData = DB.diplomEntities.Участки.Add(path); // Запись данных из переменной (path) в класс DataAreaFromGrid
 
-            SlArea.Navigate(new WhenAreaSelected());
+            SlArea.Navigate(new WhenAreaSelected());                         // Переход на следующую страницу
         }
     }
 }

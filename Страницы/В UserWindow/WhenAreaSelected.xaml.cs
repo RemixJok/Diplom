@@ -1,4 +1,5 @@
 ﻿using Diplom.Окна;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -23,8 +24,7 @@ namespace Diplom.Страницы.В_UserWindow
             DateToUchet.Text = DataAreaFromGrid.areaData.Дата_постановки_на_учет.ToShortDateString().Trim();
             Square.Text = DataAreaFromGrid.areaData.Площадь_ЗУ.ToString().Trim();
 
-            // Вывод деятельности на ЗУ в комбобокс
-            ComboPlanActiv.ItemsSource = DB.diplomEntities.Деятельность_на_ЗУ.ToList();
+            ComboPlanActiv.ItemsSource = DB.diplomEntities.Деятельность_на_ЗУ.ToList(); // Вывод из таблицы "Деятельность на ЗУ" в комбобокс
         }
 
         // Кнопка "Выбрать другой участок"
@@ -37,16 +37,15 @@ namespace Diplom.Страницы.В_UserWindow
         private void SendApplic_Click(object sender, RoutedEventArgs e)
         {
             MailDataWindow mailData = new MailDataWindow();
-            mailData.ShowDialog();
+            mailData.ShowDialog();                                      // Открытие нового окна, пока оно не закроется, программа дальше не будет работать
 
-            // Запись данных из класса в переменные
-            var userLogin = LoginAndPassMail.Login.ToString();
-            var userPassword = LoginAndPassMail.Password.ToString();
+            var userLogin = LoginAndPassMail.Login.ToString();          // Запись "Логина" из класса в переменную
+            var userPassword = LoginAndPassMail.Password.ToString();    // Запись "Пароля" из класса в переменную
 
             MessageBox.Show("Подождите несоколько секунд выполняется отправка данных, по завершении отправки Вы увидите уведомление об успешной отправке",
                 "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // Переменные, в которые заносятся данные пользователя для импорта в ворд
+            // Переменные, в которые заносятся данные пользователя для импорта в ворд, данные беруться из классов DataUser и DataAreaFromGrid
             var idUser = DataUser.User.ID_Пользователя.ToString();
             var name = DataUser.User.ФИО.ToString();
             var pol = DataUser.User.Пол.ToString();
@@ -208,10 +207,10 @@ namespace Diplom.Страницы.В_UserWindow
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress(DataUser.User.Адрес_электронной_почты.ToString(), DataUser.User.ФИО); // От кого
-            message.To.Add(new MailAddress("cepelev2001@mail.ru")); // Кому
-            message.Subject = $"Заявление на участок от пользователя {name}"; // Заголовок письма
-            message.BodyEncoding = System.Text.Encoding.UTF8; // Кодировка
-            message.Attachments.Add(new Attachment(@"C:\Users\cepel\Desktop\Заявление.docx")); // Доьбавление документа в письмо
+            message.To.Add(new MailAddress("cepelev2001@mail.ru"));                                              // Кому
+            message.Subject = $"Заявление на участок от пользователя {name}";                                    // Заголовок письма
+            message.BodyEncoding = System.Text.Encoding.UTF8;                                                    // Кодировка
+            message.Attachments.Add(new Attachment(@"C:\Users\cepel\Desktop\Заявление.docx"));                   // Добавление документа в письмо
 
             client.Send(message);
             client.Dispose();
@@ -219,7 +218,17 @@ namespace Diplom.Страницы.В_UserWindow
             MessageBox.Show("Заявление на участок было направлено на почту для рассмотрения, после его рассмотрения вам позвонят и отправят уведомление на почту, которую вы оставили при регистрации.",
                 "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            /*// Кнопка удаления пользователя
+            // Удаление участка
+            DiplomEntities deleteArea = new DiplomEntities();
+
+            // Нахождение участка с там же id, который был выбран
+            var area = DB.diplomEntities.Участки.FirstOrDefault(p => p.ID_Участка == DataAreaFromGrid.areaData.ID_Участка);
+
+            // Удаление участка из БД
+            DB.diplomEntities.Entry(area).State = EntityState.Deleted;
+            DB.diplomEntities.SaveChanges();
+
+            /*// Удаления пользователя
             DiplomEntities deleteUser = new DiplomEntities();
 
             // Нахождение пользователя с там же id, под которым выполнен вход

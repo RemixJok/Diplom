@@ -15,7 +15,7 @@ namespace Diplom.Окна
         {
             InitializeComponent();
 
-            // Вывод эл. почты в текст бокс
+            // Вывод электронной почты в текст бокс
             txtBoxLogin.Text = DataUser.User.Адрес_электронной_почты.ToString();
         }
 
