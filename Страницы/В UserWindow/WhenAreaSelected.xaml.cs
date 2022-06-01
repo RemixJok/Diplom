@@ -187,7 +187,6 @@ namespace Diplom.Страницы.В_UserWindow
             // Протоколы, на всякий случай
             ServicePointManager.SecurityProtocol =
                 SecurityProtocolType.Tls12
-                | SecurityProtocolType.Ssl3
                 | SecurityProtocolType.Tls
                 | SecurityProtocolType.Tls11;
 
@@ -200,43 +199,31 @@ namespace Diplom.Страницы.В_UserWindow
                 UserName = userLogin,
             }; // Логин и пароль от почты пользователя
 
-            // Порт, хост и включение ssl протокола для работы отправки
-            client.Port = 2525;
-            client.Host = "smtp.mail.ru";
-            client.EnableSsl = true;
+            client.Port = 2525;                                                                                  // Порт для @mail.ru
+            client.Host = "smtp.mail.ru";                                                                        // Хост для @mail.ru
+            client.EnableSsl = true;                                                                             // Включение ssl протокол
 
-            MailMessage message = new MailMessage();
+            MailMessage message = new MailMessage();                                                             // Создание экземпляра класса
+
             message.From = new MailAddress(DataUser.User.Адрес_электронной_почты.ToString(), DataUser.User.ФИО); // От кого
             message.To.Add(new MailAddress("cepelev2001@mail.ru"));                                              // Кому
             message.Subject = $"Заявление на участок от пользователя {name}";                                    // Заголовок письма
             message.BodyEncoding = System.Text.Encoding.UTF8;                                                    // Кодировка
             message.Attachments.Add(new Attachment(@"C:\Users\cepel\Desktop\Заявление.docx"));                   // Добавление документа в письмо
 
-            client.Send(message);
-            client.Dispose();
+            client.Send(message);                                                                                // Отправка письма
+            client.Dispose();                                                                                    // Освобождение ресурсов, чтобы можно было пересоздать сохраненный документ
 
             MessageBox.Show("Заявление на участок было направлено на почту для рассмотрения, после его рассмотрения вам позвонят и отправят уведомление на почту, которую вы оставили при регистрации.",
                 "Уведомление!", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // Удаление участка
-            DiplomEntities deleteArea = new DiplomEntities();
+            /*
+            DiplomEntities deleteUser = new DiplomEntities();                                                    // Удаления пользователя
 
-            // Нахождение участка с там же id, который был выбран
-            var area = DB.diplomEntities.Участки.FirstOrDefault(p => p.ID_Участка == DataAreaFromGrid.areaData.ID_Участка);
+            var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя); // Нахождение пользователя с там же id, под которым выполнен вход
 
-            // Удаление участка из БД
-            DB.diplomEntities.Entry(area).State = EntityState.Deleted;
-            DB.diplomEntities.SaveChanges();
-
-            /*// Удаления пользователя
-            DiplomEntities deleteUser = new DiplomEntities();
-
-            // Нахождение пользователя с там же id, под которым выполнен вход
-            var user = DB.diplomEntities.Пользователи.FirstOrDefault(p => p.ID_Пользователя == DataUser.User.ID_Пользователя);
-
-            // Удаление пользователя из БД 
-            DB.diplomEntities.Entry(user).State = EntityState.Deleted;
-            DB.diplomEntities.SaveChanges();
+            DB.diplomEntities.Entry(user).State = EntityState.Deleted;                                           // Удаление пользователя из БД 
+            DB.diplomEntities.SaveChanges();                                                                     // Сохранение изменений
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
