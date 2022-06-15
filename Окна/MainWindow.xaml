@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="ИС «На Дальний Восток»" MinHeight="1080" MinWidth="1920" 
+        Title="«На Дальний Восток»" MinHeight="1080" MinWidth="1920" 
         WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" 
         WindowState="Maximized" Icon="/Resources/Заголовки окон/MainLogo.ico">
     <Grid>

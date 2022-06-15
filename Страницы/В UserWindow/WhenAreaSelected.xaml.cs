@@ -226,7 +226,7 @@ namespace Diplom.Страницы.В_UserWindow
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            Close();*/
+            Application.Current.MainWindow.Close();*/
         }
     }
 }

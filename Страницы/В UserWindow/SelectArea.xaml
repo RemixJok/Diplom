@@ -21,7 +21,7 @@
                            Margin="40,0,0,0"/>
         </Border>
         
-        <ScrollViewer Grid.Row="1">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <DataGrid x:Name="DGridArea" AutoGenerateColumns="False" IsReadOnly="True" FontSize="14" 
                           CanUserResizeRows="False" CanUserResizeColumns="False" CanUserReorderColumns="False">
                 <DataGrid.Columns>
