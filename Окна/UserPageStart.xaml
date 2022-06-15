@@ -118,6 +118,7 @@
                     </Border>
 
                     <Button Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            ToolTip="Дополнительная информация" ToolTipService.InitialShowDelay="10"
                             Margin="300,38.5,0,0" Cursor="Hand" Click="OpenMoreInfo">
                         <Image Source="/Resources/UserPageStart/MoreInfo.png"/>
                     </Button>
@@ -128,17 +129,19 @@
                         <Grid.Effect>
                             <DropShadowEffect BlurRadius="5" ShadowDepth="0"/>
                         </Grid.Effect>
-                        <TextBlock Text="Данная информация берется из базы данных, данные в которую вносятся после регистрации. Для редактирования информации нажмите на кнопку «Редактирования» (2 кнопка), для удаления на кнопку «Удаления» (3 кнопка)."
+                        <TextBlock Text="Данная информация берется из базы данных, данные в которую вносятся после регистрации. Для редактирования информации нажмите на кнопку «Редактировать информацию» (2 кнопка), для удаления на кнопку «Удалить профиль» (3 кнопка)."
                                    FontSize="14" VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
                                    Margin="20,0,20,0" Foreground="#4D4D4D"/>
                     </Grid>
 
                     <Button Name="EditInfo" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                            ToolTip="Редактировать информацию" ToolTipService.InitialShowDelay="10"
                             Margin="350,38.5,0,0" Cursor="Hand" Click="EditInfo_Click" IsEnabled="True">
                         <Image Source="/Resources/UserPageStart/EditInfo.png"/>
                     </Button>
 
-                    <Button Name="DeleteInfo" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                    <Button Name="DeleteInfo" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left"
+                            ToolTip="Удалить профиль" ToolTipService.InitialShowDelay="10"
                             Margin="400,38.5,0,0" Cursor="Hand" Click="DeleteInfo_Click" IsEnabled="True">
                         <Image Source="/Resources/UserPageStart/Trash.png"/>
                     </Button>
