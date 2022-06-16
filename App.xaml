@@ -87,7 +87,7 @@
             </Setter>
         </Style>
 
-        <!-- Кнопка войти/зарег на главной странице -->
+        <!-- Кнопка войти/зарегистрироваться на главной странице -->
         <Style TargetType="Border" x:Key="BtnAuthReg">
             <Setter Property="Background">
                 <Setter.Value>
