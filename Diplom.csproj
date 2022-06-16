@@ -357,10 +357,6 @@
     <Resource Include="Resources\MainWindow\Grid1\Задник.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\MainWindow\Grid1\VK2.png" />
-    <Resource Include="Resources\MainWindow\Grid1\youtube2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\MainWindow\Grid2\Дом.png" />
     <Resource Include="Resources\MainWindow\Grid2\Лупа.png" />
   </ItemGroup>
@@ -429,6 +425,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\MainWindow\Grid1\vk.png" />
+    <Resource Include="Resources\MainWindow\Grid1\youtube.png" />
     <Resource Include="Resources\UserPageStart\FAQ.png" />
     <Resource Include="Resources\UserPageStart\Instructions.png" />
     <Resource Include="Resources\UserPageStart\Quit.png" />
