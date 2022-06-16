@@ -27,7 +27,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="Region" Header="Регион" Binding="{Binding Регион}" Width="300" FontSize="14"/>
                     <DataGridTextColumn x:Name="Adress" Header="Адрес" Binding="{Binding Адрес}" Width="*" FontSize="14"/>
-                    <DataGridTextColumn x:Name="Square" Header="Площадь кв.м." Binding="{Binding Площадь_ЗУ}" Width="200" FontSize="14"/>
+                    <DataGridTextColumn x:Name="Square" Header="Площадь кв.м." Binding="{Binding Площадь_ЗУ}" Width="200" 
+                                        FontSize="14"/>
                     <DataGridTextColumn x:Name="DateToUchet" Header="Дата постановки на учет" 
                                             Binding="{Binding Дата_постановки_на_учет, StringFormat=\{0:dd.MM.yyyy\}}"
                                             Width="200" FontSize="14"/>
