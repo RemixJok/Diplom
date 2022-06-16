@@ -98,7 +98,6 @@
                 </Button>
 
                 <Grid Grid.Row="3">
-
                     <Rectangle>
                         <Rectangle.Fill>
                             <LinearGradientBrush>
@@ -108,7 +107,7 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-
+                    
                     <Frame x:Name="ChoseArea" NavigationUIVisibility="Hidden"/>
                 </Grid>
 
