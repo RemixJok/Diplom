@@ -427,13 +427,11 @@
     </Content>
     <Resource Include="Resources\MainWindow\Grid1\vk.png" />
     <Resource Include="Resources\MainWindow\Grid1\youtube.png" />
-    <Resource Include="Resources\UserPageStart\FAQ.png" />
     <Resource Include="Resources\UserPageStart\Instructions.png" />
     <Resource Include="Resources\UserPageStart\Quit.png" />
     <Resource Include="Resources\UserPageStart\MoreInfo.png" />
     <Resource Include="Resources\UserPageStart\Trash.png" />
     <Resource Include="Resources\UserPageStart\Phone.png" />
-    <Resource Include="Resources\Выпадающий список\БП.png" />
     <Resource Include="Resources\Заголовки окон\Auth.ico" />
   </ItemGroup>
   <ItemGroup>
